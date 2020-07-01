@@ -91,8 +91,7 @@ belongs_to :product
 ### Association
 
 - has_many :cards
-- belongs_to :adress
-<!-- - has_many :products, through: :users_products -->
+- has_one :adress
 - has_many :users_products
 
 ## Product テーブル
@@ -117,4 +116,3 @@ belongs_to :product
 - has_many :images
 - has_many :categorys
 - has_many :users_products
-<!-- - has_many :users, through: :users_products -->
