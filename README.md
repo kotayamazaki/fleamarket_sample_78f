@@ -38,19 +38,6 @@ Things you may want to cover:
 ### Association
 
 - belongs_to :user
-- belongs_to :product
-
-## user_product テーブル
-
-| Column     | Type      | Options                       |
-| ---------- | --------- | ----------------------------- |
-| user_id    | reference | null: false, foreign_key:true |
-| product_id | reference | null: false, foreign_key:true |
-
-### Association
-
-- belongs_to :user
-- belongs_to :product
 
 ## card テーブル
 
@@ -105,7 +92,7 @@ belongs_to :product
 
 - has_many :cards
 - belongs_to :adress
-- has_many :products, through: :users_products
+<!-- - has_many :products, through: :users_products -->
 - has_many :users_products
 
 ## Product テーブル
@@ -127,8 +114,7 @@ belongs_to :product
 ### Association
 
 - belongs_to :user
-- belongs_to :adress
 - has_many :images
 - has_many :categorys
 - has_many :users_products
-- has_many :users, through: :users_products
+<!-- - has_many :users, through: :users_products -->
