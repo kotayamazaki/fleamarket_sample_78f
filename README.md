@@ -21,7 +21,7 @@ Things you may want to cover:
 
 - Deployment instructions
 
-## adress テーブル
+## addresses テーブル
 
 | Column           | Type      | Options                        |
 | ---------------- | --------- | ------------------------------ |
@@ -37,7 +37,7 @@ Things you may want to cover:
 
 - belongs_to :user
 
-## card テーブル
+## cards テーブル
 
 | Column          | Type      | Options                       |
 | --------------- | --------- | ----------------------------- |
@@ -50,7 +50,7 @@ Things you may want to cover:
 
 - belongs_to :user
 
-## Image テーブル
+## Images テーブル
 
 | Column     | Type      | Options                        |
 | ---------- | --------- | ------------------------------ |
@@ -61,7 +61,7 @@ Things you may want to cover:
 
 belongs_to :product
 
-## Category テーブル
+## Categories テーブル
 
 | Column     | Type      | Options                        |
 | ---------- | --------- | ------------------------------ |
@@ -70,9 +70,9 @@ belongs_to :product
 
 ### Association-
 
-belongs_to :product
+has_one :product
 
-## User テーブル
+## Users テーブル
 
 | Column           | Type    | Options                  |
 | ---------------- | ------- | ------------------------ |
@@ -83,16 +83,15 @@ belongs_to :product
 | nickname         | string  | null: false,unique: true |
 | password         | varchar | null: false,unique: true |
 | confirm password | varchar | null: false,unique: true |
-| mail adress      | varchar | null: false,unique: true |
+| mail address     | varchar | null: false,unique: true |
 | birthday         | date    | null: false              |
 
 ### Association
 
 - has_many :cards
-- has_one :adress
-- has_many :users_products
+- has_one :address
 
-## Product テーブル
+## Products テーブル
 
 | Column             | Type      | Options                        |
 | ------------------ | --------- | ------------------------------ |
@@ -112,5 +111,4 @@ belongs_to :product
 
 - belongs_to :user
 - has_many :images
-- has_many :categorys
-- has_many :users_products
+- belongs_to :category
