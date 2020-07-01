@@ -25,7 +25,7 @@ Things you may want to cover:
 
 | Column           | Type      | Options                        |
 | ---------------- | --------- | ------------------------------ |
-| user_id          | reference | null: false, foreign_key: true |
+| user_id          | references | null: false, foreign_key: true |
 | postal_code      | integer   | null: false                    |
 | prefecture       | string    | null: false                    |
 | city             | string    | null: false                    |
@@ -41,7 +41,7 @@ Things you may want to cover:
 
 | Column          | Type      | Options                       |
 | --------------- | --------- | ----------------------------- |
-| user_id         | reference | null: false, foreign_key:true |
+| user_id         | references | null: false, foreign_key:true |
 | name            | string    | null: false                   |
 | number          | integer   | null: false, unique:true      |
 | expiration_date | date      | null: false                   |
@@ -55,7 +55,7 @@ Things you may want to cover:
 | Column     | Type      | Options                        |
 | ---------- | --------- | ------------------------------ |
 | name       | string    | null: false                    |
-| product_id | reference | null: false, foreign_key: true |
+| product_id | references | null: false, foreign_key: true |
 
 ### Association-
 
@@ -66,7 +66,6 @@ belongs_to :product
 | Column     | Type      | Options                        |
 | ---------- | --------- | ------------------------------ |
 | name       | string    | null: false                    |
-| product    | string    | null: false                    |
 
 ### Association-
 
@@ -104,9 +103,8 @@ has_one :product
 | postage            | string    | null: false                    |
 | days               | string    | null: false                    |
 | credit_information | string    | null: false                    |
-| user_id            | reference | null: false, foreign_key: true |
-| image              | string    | null: false                    |
-| category_id        | reference | null: false, foreign_key: true |
+| user_id            | references | null: false, foreign_key: true |
+| category_id        | references | null: false, foreign_key: true |
 
 ### Association
 
