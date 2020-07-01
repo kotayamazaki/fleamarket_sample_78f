@@ -21,8 +21,6 @@ Things you may want to cover:
 
 - Deployment instructions
 
-- ...
-
 ## adress テーブル
 
 | Column           | Type      | Options                        |
