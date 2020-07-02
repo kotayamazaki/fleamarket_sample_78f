@@ -9,12 +9,12 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string  :first_kana,              null: false
       t.string  :family_kana,             null: false
       t.string  :nickname,                null: false, unique: true
-      t.varchar :password,                null: false, unique: true
-      t.varchar :password_confirmation,   null: false, unique: true
+      t.text    :password,                null: false, unique: true
+      t.text    :password_confirmation,   null: false, unique: true
       t.date    :birthday,                null: false
 
-      t.varchar :email,                   null: false, unique: true, default: ""
-      t.varchar :encrypted_password,      null: false, default: ""
+      t.string  :email,                   null: false, unique: true, default: ""
+      t.string  :encrypted_password,      null: false, default: ""
 
       ## Recoverable
       t.string   :reset_password_token
