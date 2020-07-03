@@ -12,6 +12,7 @@
           .field
             .field__adress
               = f.label :アドレス
+              .field__adress__required 必須
               %br/
               = f.email_field :email, autofocus: true, autocomplete: "email"
             .field__password
@@ -19,34 +20,42 @@
               - if @minimum_password_length
                 -# %em
                 -#   (#{@minimum_password_length} characters minimum)
+                .field__password__required 必須
               %br/
               = f.password_field :password, autocomplete: "new-password"
             .field__password_confirmation
               = f.label :パスワード（再入力）
+              .field__password_confirmation__required 必須
               %br/
               = f.password_field :password_confirmation, autocomplete: "new-password"
             .field__famiry_kana
-              = f.label :姓（カナ）必須
+              = f.label :姓（カナ）
+              .field__famiry_kana__required 必須
               %br/
               = f.text_field :family_kana, autocomplete: "family_kana"
             .field__family_name
               = f.label :姓（必須）
+              .field__family_name__required 必須
               %br/
               = f.text_field :family_name, autocomplete: "family_name"
             .field__first_kana
-              = f.label :名（カナ）必須
+              = f.label :名（カナ）
+              .field__first_kana__required 必須
               %br/
               = f.text_field :first_kana, autocomplete: "first_kana"
             .field__fist_name
-              = f.label :名（必須）
+              = f.label :名
+              .field__fist_name__required 必須
               %br/
               = f.text_field :fist_name, autocomplete: "first_name"
             .field__nickname
-              = f.label :ニックネーム（必須）
+              = f.label :ニックネーム
+              .field__nickname__required 必須
               %br/
               = f.text_field :nickname, autocomplete: "nickname"
             .field__birthday
-              = f.label :誕生日（必須）
+              = f.label :誕生日
+              .field__birthday__required 必須
               %br/
               = f.text_field :birthday, autocomplete: "birthday"
       .actions
