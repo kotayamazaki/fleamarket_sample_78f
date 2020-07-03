@@ -8,46 +8,47 @@
     = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
       = render "devise/shared/error_messages", resource: resource
       .contents
-        .field
-          .field__adress
-            = f.label :アドレス
-            %br/
-            = f.email_field :email, autofocus: true, autocomplete: "email"
-          .field__password
-            = f.label :パスワード
-            - if @minimum_password_length
-              -# %em
-              -#   (#{@minimum_password_length} characters minimum)
-            %br/
-            = f.password_field :password, autocomplete: "new-password"
-          .field__password_confirmation
-            = f.label :パスワード（再入力）
-            %br/
-            = f.password_field :password_confirmation, autocomplete: "new-password"
-          .field__famiry_kana
-            = f.label :姓（カナ）
-            %br/
-            = f.text_field :family_kana, autocomplete: "family_kana"
-          .field__family_name
-            = f.label :姓
-            %br/
-            = f.text_field :family_name, autocomplete: "family_name"
-          .field__first_kana
-            = f.label :名（カナ）
-            %br/
-            = f.text_field :first_kana, autocomplete: "first_kana"
-          .field__fist_name
-            = f.label :名
-            %br/
-            = f.text_field :fist_name, autocomplete: "first_name"
-          .field__nickname
-            = f.label :ニックネーム
-            %br/
-            = f.text_field :nickname, autocomplete: "nickname"
-          .field__birthday
-            = f.label :誕生日
-            %br/
-            = f.text_field :birthday, autocomplete: "birthday"
+        .registration
+          .field
+            .field__adress
+              = f.label :アドレス
+              %br/
+              = f.email_field :email, autofocus: true, autocomplete: "email"
+            .field__password
+              = f.label :パスワード
+              - if @minimum_password_length
+                -# %em
+                -#   (#{@minimum_password_length} characters minimum)
+              %br/
+              = f.password_field :password, autocomplete: "new-password"
+            .field__password_confirmation
+              = f.label :パスワード（再入力）
+              %br/
+              = f.password_field :password_confirmation, autocomplete: "new-password"
+            .field__famiry_kana
+              = f.label :姓（カナ）
+              %br/
+              = f.text_field :family_kana, autocomplete: "family_kana"
+            .field__family_name
+              = f.label :姓
+              %br/
+              = f.text_field :family_name, autocomplete: "family_name"
+            .field__first_kana
+              = f.label :名（カナ）
+              %br/
+              = f.text_field :first_kana, autocomplete: "first_kana"
+            .field__fist_name
+              = f.label :名
+              %br/
+              = f.text_field :fist_name, autocomplete: "first_name"
+            .field__nickname
+              = f.label :ニックネーム
+              %br/
+              = f.text_field :nickname, autocomplete: "nickname"
+            .field__birthday
+              = f.label :誕生日
+              %br/
+              = f.text_field :birthday, autocomplete: "birthday"
       .actions
         = f.submit "登録する"
     = render "devise/shared/links"
@@ -59,4 +60,5 @@
     .footer_logo_box
       .footer_center
         .gray
-          = image_tag "logo-white.png", size: "185x49", alt: "フリマのアイコン"
+          =link_to root_path do
+            = image_tag "logo-white.png", size: "185x49", alt: "フリマのアイコン"

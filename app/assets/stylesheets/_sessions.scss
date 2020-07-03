@@ -5,9 +5,76 @@ body {
   font-size: 20px;
   color: #333;
   list-style: none;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
-
-  .field{
-    font-size: 10px;
-    background-color: #ffff;
+  .contena{
+    .user_new_header {
+      height: 128px;
+      color: #ffffff;
+      .logo {
+        text-align: center;
+        line-height: 90px;
+        padding-top: 40px;
+      } 
+    }
+    .user_new_main{
+      text-align: center;
+      .contents{
+        display: flex;
+        justify-content: center;
+      }
+      .sessions{
+        width: 500px;
+        height: 150px;
+        background-color: #fff;
+      }
+      .field{
+        font-size: 10px;
+        background-color: #ffff;
+      }
+    }
+    .user_new_footer {
+      height: calc(100vh - 128px -344px);
+      margin: 0 auto;
+        .info_box {
+        text-align: center;
+        height: 12px;
+        padding: 40px 0;
+          .privacy {
+          display: inline-block;
+          font-size: 12px;
+          color: #808080;
+          }
+          .terns {
+          font-size: 12px;
+          display: inline-block;
+          color: #808080;
+          }
+          .specific {
+          font-size: 12px;
+          display: inline-block;
+          color: #808080;
+          }
+        }
+      .footer_logo_box {
+        width: 1012px;
+        height: 220px;
+        display: flex;
+        text-align: center;
+        .footer_center {
+        height: 220px;
+        width: 456px;
+        display: inline-block;
+        margin:0 auto;
+          .gray {
+          margin:0 auto;
+          }
+          .inc {
+          font-size: 13px;
+          }
+        }
+      }
+    }
   }
