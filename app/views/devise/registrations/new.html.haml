@@ -26,27 +26,27 @@
               %br/
               = f.password_field :password_confirmation, autocomplete: "new-password"
             .field__famiry_kana
-              = f.label :姓（カナ）
+              = f.label :姓（カナ）必須
               %br/
               = f.text_field :family_kana, autocomplete: "family_kana"
             .field__family_name
-              = f.label :姓
+              = f.label :姓（必須）
               %br/
               = f.text_field :family_name, autocomplete: "family_name"
             .field__first_kana
-              = f.label :名（カナ）
+              = f.label :名（カナ）必須
               %br/
               = f.text_field :first_kana, autocomplete: "first_kana"
             .field__fist_name
-              = f.label :名
+              = f.label :名（必須）
               %br/
               = f.text_field :fist_name, autocomplete: "first_name"
             .field__nickname
-              = f.label :ニックネーム
+              = f.label :ニックネーム（必須）
               %br/
               = f.text_field :nickname, autocomplete: "nickname"
             .field__birthday
-              = f.label :誕生日
+              = f.label :誕生日（必須）
               %br/
               = f.text_field :birthday, autocomplete: "birthday"
       .actions
