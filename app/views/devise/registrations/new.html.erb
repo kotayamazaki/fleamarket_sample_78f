@@ -1,4 +1,4 @@
-<h2>Sign up</h2>
+<h2>新規登録</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -21,9 +21,41 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
+  <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name, autocomplete: "first_name" %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :family_name %><br />
+    <%= f.text_field :family_name, autocomplete: "family_name" %>
+  </div>
+ 
+  <div class="field">
+    <%= f.label :first_kana %><br />
+    <%= f.text_field :first_kana, autocomplete: "first_kana" %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :family_kana %><br />
+    <%= f.text_field :family_kana, autocomplete: "family_kana" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nickname %><br />
+    <%= f.text_field :nickname, autocomplete: "nickname" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :birthday %><br />
+    <%= f.text_field :birthday, autocomplete: "birthday" %>
+  </div>
+ 
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+

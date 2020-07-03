@@ -4,13 +4,14 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
   def change
     create_table :users do |t|
       ## Database authenticatable
-      t.string  :fist_name,               null: false
+      t.string  :first_name,              null: false
       t.string  :family_name,             null: false
       t.string  :first_kana,              null: false
       t.string  :family_kana,             null: false
       t.string  :nickname,                null: false, unique: true
-      t.text    :password,                null: false, unique: true
-      t.text    :password_confirmation,   null: false, unique: true
+      # t.text    :password,                null: false, unique: true
+      # t.text    :password_confirmation,   null: false, unique: true
+      # deviceでデフォルトに実装されているので記述は必要なし。
       t.date    :birthday,                null: false
 
       t.string  :email,                   null: false, unique: true, default: ""
