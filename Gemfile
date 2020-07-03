@@ -64,4 +64,5 @@ group :production do
   gem 'unicorn'
 end
 
+gem 'coderay', '1.1.2'
 gem 'devise'
