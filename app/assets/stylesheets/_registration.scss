@@ -33,88 +33,88 @@ body {
       .field{
         font-size: 10px;
         background-color: #ffff;
-      }
-      .field__adress__required{
-        background: #ea352d;
+        &__address__required{
+          background: #ea352d;
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+          border-radius: 2px;
+          color: #fff;
+          font-size: 12px;
+          display: inline-block;
+        }
+        &__password__required{
+          background: #ea352d;
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+          border-radius: 2px;
+          color: #fff;
+          font-size: 12px;
+          display: inline-block;
+        }
+        &__password_confirmation__required{
+          background: #ea352d;
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+          border-radius: 2px;
+          color: #fff;
+          font-size: 12px;
+          display: inline-block;
+        }
+        &__famiry_kana__required{
+          background: #ea352d;
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+          border-radius: 2px;
+          color: #fff;
+          font-size: 12px;
+          display: inline-block;
+        }
+        &__family_name__required{
+          background: #ea352d;
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+          border-radius: 2px;
+          color: #fff;
+          font-size: 12px;
+          display: inline-block;
+        }
+        &__first_kana__required {
+          background: #ea352d;
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+          border-radius: 2px;
+          color: #fff;
+          font-size: 12px;
+          display: inline-block;
+        }
+        &__fist_name__required{
+          background: #ea352d;
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+          border-radius: 2px;
+          color: #fff;
+          font-size: 12px;
+          display: inline-block;
+        }
+        &__nickname__required{
+          background: #ea352d;
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+          border-radius: 2px;
+          color: #fff;
+          font-size: 12px;
+          display: inline-block;
+        }
+        &__birthday__required{
+          background: #ea352d;
         margin: 0 0 0 8px;
         padding: 2px 4px;
         border-radius: 2px;
         color: #fff;
         font-size: 12px;
         display: inline-block;
+        }
       }
-      .field__password__required{
-        background: #ea352d;
-        margin: 0 0 0 8px;
-        padding: 2px 4px;
-        border-radius: 2px;
-        color: #fff;
-        font-size: 12px;
-        display: inline-block;
-      }
-      .field__password_confirmation__required{
-        background: #ea352d;
-        margin: 0 0 0 8px;
-        padding: 2px 4px;
-        border-radius: 2px;
-        color: #fff;
-        font-size: 12px;
-        display: inline-block;
-      }
-      .field__famiry_kana__required{
-        background: #ea352d;
-        margin: 0 0 0 8px;
-        padding: 2px 4px;
-        border-radius: 2px;
-        color: #fff;
-        font-size: 12px;
-        display: inline-block;
-      }
-      .field__family_name__required{
-        background: #ea352d;
-        margin: 0 0 0 8px;
-        padding: 2px 4px;
-        border-radius: 2px;
-        color: #fff;
-        font-size: 12px;
-        display: inline-block;
-      }
-      .field__first_kana__required {
-        background: #ea352d;
-        margin: 0 0 0 8px;
-        padding: 2px 4px;
-        border-radius: 2px;
-        color: #fff;
-        font-size: 12px;
-        display: inline-block;
-      }
-      .field__fist_name__required{
-        background: #ea352d;
-        margin: 0 0 0 8px;
-        padding: 2px 4px;
-        border-radius: 2px;
-        color: #fff;
-        font-size: 12px;
-        display: inline-block;
-      }
-      .field__nickname__required{
-        background: #ea352d;
-        margin: 0 0 0 8px;
-        padding: 2px 4px;
-        border-radius: 2px;
-        color: #fff;
-        font-size: 12px;
-        display: inline-block;
-      }
-      .field__birthday__required{
-      background: #ea352d;
-      margin: 0 0 0 8px;
-      padding: 2px 4px;
-      border-radius: 2px;
-      color: #fff;
-      font-size: 12px;
-      display: inline-block;
-     }
     }
     .user_new_footer {
       height: calc(100vh - 128px -344px);
