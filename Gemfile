@@ -67,3 +67,4 @@ end
 gem 'devise'
 gem "haml-rails", ">= 1.0", '<= 2.0.1'
 gem 'coderay', '1.1.2'
+gem 'font-awesome-sass'
