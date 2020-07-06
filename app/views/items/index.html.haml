@@ -1,7 +1,7 @@
-.header 
+.header
   .logo
     =link_to root_path do
-      -# = image_tag "logo.png", size: "185x49", alt: "フリマのアイコン"
+      = image_tag "logo.png", size: "185x49", alt: "フリマのアイコン"
   .search
     = form_with(local: true, method: :get, class: "search-form") do |f|
       = f.text_field :keyword, placeholder: "何かお探しですか？", class: "search-input"
@@ -9,8 +9,6 @@
         %i.fas.fa-search
 .menu
   .category カテゴリ
-
-
 - if user_signed_in?
   / ユーザーがログインしているか調べる
   / ユーザーがログインしていた時の処理
@@ -28,3 +26,4 @@
   / ログイン画面に移行する
   = link_to "新規登録", new_user_registration_path, class: 'post'
   / 新規登録画面に移行する
+

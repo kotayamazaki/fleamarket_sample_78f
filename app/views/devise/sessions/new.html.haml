@@ -1,5 +1,5 @@
 .contena
-  -# = render partial: "header_logo"
+  = render partial: "header_logo"
   .user_new_main
     %h2 ログイン
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
@@ -21,4 +21,4 @@
             .actions
               = f.submit "ログイン"
       = render "devise/shared/links"
-    -# = render partial: "footer_logo"
+    = render partial: "footer_logo"
