@@ -6,6 +6,6 @@ class User < ApplicationRecord
           #  password_length: 7..128は登録ログイン時にパスワード７文字以上の表示を設定
 
   validates :nickname, presence: true, uniqueness: true
-  validates :encrypted_password, presence: true, uniqueness: true, length: { minimum: 7}
+  validates :encrypted_password, presence: true, length: { minimum: 7}
   # length: { minimum: 7}は最低７文字必須のバリデーションを設定（大森，阿部）
 end
