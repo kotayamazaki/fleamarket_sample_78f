@@ -66,3 +66,4 @@ end
 
 gem 'coderay', '1.1.2'
 gem 'devise'
+gem "haml-rails", ">= 1.0", '<= 2.0.1'
