@@ -1,15 +1,16 @@
-.contena
+.header
   .logo
     =link_to root_path do
       = image_tag "logo.png", size: "185x49", alt: "フリマのアイコン"
-  .sign_in
-    = link_to "新規登録", new_user_registration_path
-    = link_to "サインイン", new_user_session_path
-
+  .search
     = form_with(local: true, method: :get, class: "search-form") do |f|
       = f.text_field :keyword, placeholder: "何かお探しですか？", class: "search-input"
       -# = f.submit "検索", class: "search-btn" 
       %button{type: "submit", class:'btn'}
         %i.fas.fa-search
-        .serch
-          検索
+.menu
+  .category カテゴリ
+  .sign_in
+    = link_to "新規登録", new_user_registration_path
+    = link_to "サインイン", new_user_session_path
+
