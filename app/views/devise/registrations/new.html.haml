@@ -1,45 +1,61 @@
-%h2 新規登録
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .field
-    = f.label :first_name
-    %br/
-    = f.text_field :first_name, autocomplete: "first_name"
-  .field
-    = f.label :family_name
-    %br/
-    = f.text_field :family_name, autocomplete: "family_name"
-  .field
-    = f.label :first_kana
-    %br/
-    = f.text_field :first_kana, autocomplete: "first_kana"
-  .field
-    = f.label :family_kana
-    %br/
-    = f.text_field :family_kana, autocomplete: "family_kana"
-  .field
-    = f.label :nickname
-    %br/
-    = f.text_field :nickname, autocomplete: "nickname"
-  .field
-    = f.label :birthday
-    %br/
-    = f.text_field :birthday, autocomplete: "birthday"
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+.contena
+  = render partial: "header_logo"
+  .user_new_main
+    %h2 会員情報入力
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = render "devise/shared/error_messages", resource: resource
+      .contents
+        .registration
+          .field
+            .field__address
+              = f.label :アドレス
+              .field__address__required 必須
+              %br/
+              = f.email_field :email, autofocus: true, autocomplete: "email"
+            .field__password
+              = f.label :パスワード
+              - if @minimum_password_length
+                -# %em
+                -#   (#{@minimum_password_length} characters minimum)
+                .field__password__required 必須
+              %br/
+              = f.password_field :password, autocomplete: "new-password"
+            .field__password_confirmation
+              = f.label :パスワード（再入力）
+              .field__password_confirmation__required 必須
+              %br/
+              = f.password_field :password_confirmation, autocomplete: "new-password"
+            .field__famiry_kana
+              = f.label :姓（カナ）
+              .field__famiry_kana__required 必須
+              %br/
+              = f.text_field :family_kana, autocomplete: "family_kana"
+            .field__family_name
+              = f.label :姓
+              .field__family_name__required 必須
+              %br/
+              = f.text_field :family_name, autocomplete: "family_name"
+            .field__first_kana
+              = f.label :名（カナ）
+              .field__first_kana__required 必須
+              %br/
+              = f.text_field :first_kana, autocomplete: "first_kana"
+            .field__fist_name
+              = f.label :名
+              .field__fist_name__required 必須
+              %br/
+              = f.text_field :fist_name, autocomplete: "first_name"
+            .field__nickname
+              = f.label :ニックネーム
+              .field__nickname__required 必須
+              %br/
+              = f.text_field :nickname, autocomplete: "nickname"
+            .field__birthday
+              = f.label :誕生日
+              .field__birthday__required 必須
+              %br/
+              = f.text_field :birthday, autocomplete: "birthday"
+      .actions
+        = f.submit "登録する"
+    = render "devise/shared/links"
+  = render partial: "footer_logo"
