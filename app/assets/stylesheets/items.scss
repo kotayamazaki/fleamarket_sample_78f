@@ -42,6 +42,8 @@
   display: flex;
   justify-content: space-between;
   width: 100vw;
+  font-size: 20px;
+  margin-bottom: 10px;
   .category {
     padding: 0 20px;
     .sign_in {
@@ -51,3 +53,34 @@
     }
   }
 }
+
+.main{
+  box-sizing: border-box;
+  display: block;
+  .main_visual{
+    background-image: url("bg-mainVisual-pict_pc.png");
+    width: 100vw;
+    height: 560px;
+    position: relative;
+    padding: 0 60px;
+    align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x:center;
+    .content{
+      max-width: 1280px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 35px 0 0 0;
+      .content_subtitle{
+        font-size: 60px;
+        color: #fff;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        line-height: 1.2;
+      }
+      .content_text{
+      }
+    }
+  }
+}
+
