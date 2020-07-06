@@ -1,0 +1,24 @@
+.contena
+  = render partial: "header_logo"
+  .user_new_main
+    %h2 ログイン
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .contents
+        .sessions
+          .field
+            .field__adress
+              = f.label :アドレス
+              %br/
+              = f.email_field :email, autofocus: true, autocomplete: "email"
+            .field__password
+              = f.label :パスワード
+              %br/
+              = f.password_field :password, autocomplete: "current-password"
+            - if devise_mapping.rememberable?
+              .field__password_confirmation
+                = f.check_box :remember_me
+                = f.label :記憶する
+            .actions
+              = f.submit "ログイン"
+      = render "devise/shared/links"
+    = render partial: "footer_logo"

@@ -1,0 +1,161 @@
+body {
+  position: relative;
+  height: 100%;
+  background: #f5f5f5;
+  font-size: 20px;
+  color: #333;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+  .contena{
+    .user_new_header {
+      height: 128px;
+      color: #ffffff;
+      .logo {
+        text-align: center;
+        line-height: 90px;
+        padding-top: 40px;
+      } 
+    }
+    .user_new_main{
+      text-align: center;
+      .contents{
+        display: flex;
+        justify-content: center;
+      }
+      .registration{
+        width: 500px;
+        height: 400px;
+        background-color: #fff;
+      }
+      .field{
+        font-size: 10px;
+        background-color: #ffff;
+        &__address__required{
+          background: #ea352d;
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+          border-radius: 2px;
+          color: #fff;
+          font-size: 12px;
+          display: inline-block;
+        }
+        &__password__required{
+          background: #ea352d;
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+          border-radius: 2px;
+          color: #fff;
+          font-size: 12px;
+          display: inline-block;
+        }
+        &__password_confirmation__required{
+          background: #ea352d;
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+          border-radius: 2px;
+          color: #fff;
+          font-size: 12px;
+          display: inline-block;
+        }
+        &__famiry_kana__required{
+          background: #ea352d;
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+          border-radius: 2px;
+          color: #fff;
+          font-size: 12px;
+          display: inline-block;
+        }
+        &__family_name__required{
+          background: #ea352d;
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+          border-radius: 2px;
+          color: #fff;
+          font-size: 12px;
+          display: inline-block;
+        }
+        &__first_kana__required {
+          background: #ea352d;
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+          border-radius: 2px;
+          color: #fff;
+          font-size: 12px;
+          display: inline-block;
+        }
+        &__fist_name__required{
+          background: #ea352d;
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+          border-radius: 2px;
+          color: #fff;
+          font-size: 12px;
+          display: inline-block;
+        }
+        &__nickname__required{
+          background: #ea352d;
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+          border-radius: 2px;
+          color: #fff;
+          font-size: 12px;
+          display: inline-block;
+        }
+        &__birthday__required{
+          background: #ea352d;
+        margin: 0 0 0 8px;
+        padding: 2px 4px;
+        border-radius: 2px;
+        color: #fff;
+        font-size: 12px;
+        display: inline-block;
+        }
+      }
+    }
+    .user_new_footer {
+      height: calc(100vh - 128px -344px);
+      margin: 0 auto;
+        .info_box {
+        text-align: center;
+        height: 12px;
+        padding: 40px 0;
+          .privacy {
+          display: inline-block;
+          font-size: 12px;
+          color: #808080;
+          }
+          .terns {
+          font-size: 12px;
+          display: inline-block;
+          color: #808080;
+          }
+          .specific {
+          font-size: 12px;
+          display: inline-block;
+          color: #808080;
+          }
+        }
+      .footer_logo_box {
+        width: 1012px;
+        height: 220px;
+        display: flex;
+        text-align: center;
+        .footer_center {
+        height: 220px;
+        width: 456px;
+        display: inline-block;
+        margin:0 auto;
+          .gray {
+          margin:0 auto;
+          }
+          .inc {
+          font-size: 13px;
+          }
+        }
+      }
+    }
+  }

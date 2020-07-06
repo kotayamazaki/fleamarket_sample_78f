@@ -1,3 +1,53 @@
 // Place all the styles related to the items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  .logo {
+  }
+  .search {
+    width: 100%;
+  }
+}
+.btn {
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  padding: 0 20px 0;
+  margin: 0 5px;
+  background-color: #38aef0;
+  color: white;
+  box-shadow: 1px 1px 2px #999999;
+  border-style: none;
+  display: flex;
+}
+.search-input {
+  width: 100%;
+  margin-left: 10px;
+}
+.search-form{
+  display: flex;
+  width: 100%;
+}
+.fas.fa-search {
+  color: white;
+  font-size: 17px;
+  display: flex;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  .category {
+    padding: 0 20px;
+    .sign_in {
+    height: 30px;
+    width: 100%;
+    padding: 0 20px;
+    }
+  }
+}
