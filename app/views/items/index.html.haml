@@ -9,7 +9,22 @@
         %i.fas.fa-search
 .menu
   .category カテゴリ
-  .sign_in
-    = link_to "新規登録", new_user_registration_path
-    = link_to "サインイン", new_user_session_path
-    = link_to "ログアウト", destroy_user_session_path, method: :delete
+
+
+- if user_signed_in?
+  / ユーザーがログインしているか調べる
+  / ユーザーがログインしていた時の処理
+  %h2
+    現在 #{current_user.nickname} さんがログインしています
+  / ここを追加します
+  %h4
+    メールアドレス： #{current_user.email}
+  = link_to "ログアウト", destroy_user_session_path, method: :delete
+  / ログアウトをする
+- else
+  / ユーザーがログインしていなかった時の処理
+  %h2 現在ログインしていません
+  = link_to "ログイン", new_user_session_path, class: 'post'
+  / ログイン画面に移行する
+  = link_to "新規登録", new_user_registration_path, class: 'post'
+  / 新規登録画面に移行する

@@ -14,6 +14,4 @@ class User < ApplicationRecord
                 # 全角(平仮名、カタカナ、漢字)のみ入力（大森，阿部）
                 message: "全角で入力して下さい"
               }
-            
-
 end
