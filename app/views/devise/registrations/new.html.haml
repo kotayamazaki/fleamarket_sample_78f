@@ -1,5 +1,5 @@
 .contena
-  = render partial: "header_logo"
+  -# = render partial: "header_logo"
   .user_new_main
     %h2 会員情報入力
     = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
@@ -44,7 +44,7 @@
               = f.label :名
               .field__fist_name__required 必須
               %br/
-              = f.text_field :fist_name, autocomplete: "first_name"
+              = f.text_field :first_name, autocomplete: "first_name"
             .field__nickname
               = f.label :ニックネーム
               .field__nickname__required 必須
@@ -58,4 +58,4 @@
       .actions
         = f.submit "登録する"
     = render "devise/shared/links"
-  = render partial: "footer_logo"
+  -# = render partial: "footer_logo"

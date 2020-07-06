@@ -1,4 +1,4 @@
-.header
+.header 
   .logo
     =link_to root_path do
       -# = image_tag "logo.png", size: "185x49", alt: "フリマのアイコン"
@@ -12,3 +12,4 @@
   .sign_in
     = link_to "新規登録", new_user_registration_path
     = link_to "サインイン", new_user_session_path
+    = link_to "ログアウト", destroy_user_session_path, method: :delete
