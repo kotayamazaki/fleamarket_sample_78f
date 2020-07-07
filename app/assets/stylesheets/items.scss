@@ -79,7 +79,74 @@
         line-height: 1.2;
       }
       .content_text{
+        text-shadow:0 0 5px rgba(0,0,0,0.4) ;
+        font-size: 18px;
+        color: #fff;
+        line-height: 1.77778;
+        margin: 16px 0 0 0;
       }
+      .content_btn{
+        display: flex;
+        margin: 24px 0 0 0;
+      }
+      .gBtn{
+        width: 180px;
+      }
+    }
+  }
+  .topIntroduction {
+    padding: 60px 20px;
+    .subtitle {
+      text-align: center;
+      font-size: 26px;
+      line-height: 1.4;
+      font-weight: bold;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      position: relative;
+    }
+    .lists {
+      text-align: center;
+      display: flex;
+      max-width: 1020px;
+      width: 100%;
+      margin: 0 auto;
+      .list {
+        width: 30%;
+        margin: 16px 5% 0 0;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &__pict {
+          position: relative;
+          margin-bottom: 20px;
+          .number {
+            position: absolute;
+            font-size: 30px;
+            text-align: center;
+            margin: 0 5px 0 0;
+            padding: 10px 20px;
+            background-color: #3ccace;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+  .topMiddleDl {
+    background-image: url("bg-topMiddleDI-pict_pc.png");
+    // background-position:bottom right ;
+    height: 400px;
+    background-size: cover;
+    // display: flex;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-position-x:center;
+    position: relative;
+    width: 100vw;
+    height: 560px;
+    .topMiddleDL__inner {
     }
   }
 }
