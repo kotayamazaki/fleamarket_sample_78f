@@ -66,4 +66,83 @@
         %a.gBtn 
           = image_tag "google-play-badge.png" ,size: "155x60"
 
-    
+  .topKeyFeatures
+    .head
+      %h2 FURIMAの特徴
+    %ul.items
+      %li.item
+        .item__img
+          = image_tag "icon-01.png", size:"250x350"
+        .item__subtitle
+          %h3 簡単に売り買いできる
+        .item__detail
+          %p スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+      %li.item
+        .item__img
+          = image_tag "icon-03.png", size:"250x350"
+        .item__subtitle
+          %h3 売上金は即日振込みに対応
+        .item__detail
+          %p 午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします！
+      %li.item
+        .item__img
+          = image_tag "icon-04.png", size:"250x350"
+        .item__subtitle
+          %h3 様々な支払いに対応
+        .item__detail
+          %p お支払いは、クレジットカードだけではなく、ポイントや売上金など多彩な方法があります。
+  
+  .pickupContainer
+    .head
+      %h2 商品一覧
+      .productBox
+        .productHead
+          .title
+            %h3 新規投稿商品
+        .productLists
+          .productList
+            .productList--img
+            .productList--body
+              .name
+                -# %h3 ああ
+                  -#  .datails
+                  -#   %ul
+                  -#     %li 1000円
+                  -#       %i.fas.fa-starlikeIcon
+                  -#     %p (税込)
+.appBanner
+  .inner
+    .inner__title
+      %h2 だれでもかんたん、人生を変えるフリマアプリ
+    .inner__text
+      %p 今すぐ無料ダウンロード！
+    .inner__icon
+      %a.gBtn 
+        = image_tag "google-play-badge.png" ,size: "200x90"
+                      
+.appfooter
+  %ul.contents
+    %li.content
+      .content__head
+        %h2 FURIMAについて
+        %Ul
+          %li 会社概要(運営会社)
+          %li プライバシーポリシー
+          %li FURIMA利用規約
+          %li ポイントに関する特約
+    %li.content
+      .content__head
+        %h2 FURIMAを見る
+        %Ul
+          %li カテゴリー一覧
+          %li ブランド一覧
+    %li.content
+      .content__head
+        %h2 ヘルプ＆ガイド
+        %Ul
+          %li FURIMAガイド
+          %li FURIMAロゴ利用ガイドライン
+          %li お知らせ
+  .footer__logo
+    = image_tag "logo-white.png", size: "185x49", alt: "フリマのアイコン"
+    %p © FURIMA
