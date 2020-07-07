@@ -1,0 +1,44 @@
+.Header
+  Furima
+  .MainContents
+    .MainContents__box
+    %section.SubContent
+      %h2 購入内容の確認
+
+    %section.SubContent
+      = image_tag "icon-search 1.png", size:"100×100"
+      -# 上記のイメージには購入するで進んだ際に選んだ商品の画像のカラムが入るようにする。
+      .PayList 
+        商品名
+        .PayList__price 
+          値段
+          -# 上記には購入ボタンを押した際に、テーブルに保存されたカラムを表示するうようにする。
+    
+    %section.SubContent
+      .TotalMoney
+        .TotalMoney__title
+          %h3 支払い金額
+        .TotalMoney__price
+          ¥
+    -# このセクションも選択したものの合計金額になるようにメソッド？を指定する必要がある。
+
+    %section.SubContent
+      .CreditPay
+        支払い方法
+        ＋選択してください
+
+    %section.SubContent
+      .SendMethod
+        配送先
+        ＋選択してください
+    -# 上記の二つのセクションは編集画面に飛んで入力できるように後に編集す。
+
+    %section.SubContent
+      .ConfirmationPay
+        配送先と支払い方法の入力を完了してください。
+        .ConfirmationPay__btn
+          購入する
+
+
+    .Footer
+      Furima
