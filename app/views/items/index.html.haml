@@ -27,3 +27,136 @@
   = link_to "新規登録", new_user_registration_path, class: 'post'
   / 新規登録画面に移行する
 
+.main
+  .main_visual
+    .content
+      .content_subtitle
+        %h2 人生を変えるフリマアプリ
+      .content_text
+        %p FURIMAはだれでもかんたんに出品・購入できる 
+        %br フリマアプリです
+      .content_btn
+        %a.gBtn 
+          = image_tag "google-play-badge.png" ,size: "155x60"
+        -# %a.aBtn 
+        -# %img{src = "Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg" alt="ダウンロード"}
+  .topIntroduction
+    .subtitle
+      %h2 FURIMAが選ばれる3つの理由
+    %ul.lists
+      %li.list
+        .list__pict
+          %span.number 1
+          = image_tag "pict-reason-01.jpg", size:"300x300"
+        .list__text
+          %h3 3分ですぐに出品
+        .list__description
+          %p スマホで入力するだけで簡単に出品できる！
+      %li.list
+        .list__pict
+          %span.number 2
+          = image_tag "pict-reason-02.jpg", size:"300x300"
+        .list__text
+          %h3 シンプルで使いやすい
+        .list__description
+          %p めんどくさい入力は必要なく、検索も購入もスムーズ！
+      %li.list
+        .list__pict
+          %span.number 3
+          = image_tag "pict-reason-03.jpg", size:"300x300"
+        .list__text
+          %h3 手数料業界最安
+        .list__description
+          %p 最大３％でお得に出品＆購入！
+  .topMiddleDl
+    .topMiddleDl__inner
+      .subtitle
+        %h2 会員数日本一位
+      .text
+        %p FURIMAは、フリマアプリで最も人気。
+        %br 出品・購入回数も業界最多です！
+        %br ほしかったあの商品に出会えるかもしれません。
+      .content_btn
+        %a.gBtn 
+          = image_tag "google-play-badge.png" ,size: "155x60"
+
+  .topKeyFeatures
+    .head
+      %h2 FURIMAの特徴
+    %ul.items
+      %li.item
+        .item__img
+          = image_tag "icon-01.png", size:"250x350"
+        .item__subtitle
+          %h3 簡単に売り買いできる
+        .item__detail
+          %p スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+      %li.item
+        .item__img
+          = image_tag "icon-03.png", size:"250x350"
+        .item__subtitle
+          %h3 売上金は即日振込みに対応
+        .item__detail
+          %p 午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします！
+      %li.item
+        .item__img
+          = image_tag "icon-04.png", size:"250x350"
+        .item__subtitle
+          %h3 様々な支払いに対応
+        .item__detail
+          %p お支払いは、クレジットカードだけではなく、ポイントや売上金など多彩な方法があります。
+  
+  .pickupContainer
+    .head
+      %h2 商品一覧
+      .productBox
+        .productHead
+          .title
+            %h3 新規投稿商品
+        .productLists
+          .productList
+            .productList--img
+            .productList--body
+              .name
+                -# %h3 ああ
+                  -#  .datails
+                  -#   %ul
+                  -#     %li 1000円
+                  -#       %i.fas.fa-starlikeIcon
+                  -#     %p (税込)
+.appBanner
+  .inner
+    .inner__title
+      %h2 だれでもかんたん、人生を変えるフリマアプリ
+    .inner__text
+      %p 今すぐ無料ダウンロード！
+    .inner__icon
+      %a.gBtn 
+        = image_tag "google-play-badge.png" ,size: "200x90"
+                      
+.appfooter
+  %ul.contents
+    %li.content
+      .content__head
+        %h2 FURIMAについて
+      %Ul.content__text
+        %li 会社概要(運営会社)
+        %li プライバシーポリシー
+        %li FURIMA利用規約
+        %li ポイントに関する特約
+    %li.content
+      .content__head
+        %h2 FURIMAを見る
+      %Ul.content__text
+        %li カテゴリー一覧
+        %li ブランド一覧
+    %li.content
+      .content__head
+        %h2 ヘルプ＆ガイド
+      %Ul.content__text
+        %li FURIMAガイド
+        %li FURIMAロゴ利用ガイドライン
+        %li お知らせ
+  .footer__logo
+    = image_tag "logo-white.png", size: "185x49", alt: "フリマのアイコン"
+    %p © FURIMA
