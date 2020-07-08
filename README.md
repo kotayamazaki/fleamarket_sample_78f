@@ -97,12 +97,12 @@ has_one :product
 | text               | text       | null: false                    |
 | price              | integer    | null: false                    |
 | condition          | string     | null: false                    |
-| shipping_area      | string     | null: false                    |
+| area               | string     | null: false                    |
 | postage            | string     | null: false                    |
 | days               | string     | null: false                    |
 | credit_information | string     | null: false                    |
-| seller_user_id     | references | null: false, foreign_key: true |
-| buyer_user_id      | references | foreign_key: true              |
+| seller_id          | references | null: false, foreign_key: true |
+| buyer_id           | references | foreign_key: true              |
 | category_id        | references | null: false, foreign_key: true |
 
 ### Association
