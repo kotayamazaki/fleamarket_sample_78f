@@ -2,24 +2,30 @@
 %p Find me in app/views/products/new.html.haml
 
 
+
 %h1 商品出品
 = form_with model: @product, local: true do |f|
-  -# .product-image 
-  -#   = f.label :name, "商品画像"
-  -#   = f.file_field :name, placeholder: '必須'
+
+
+  .product-image 
+    = f.fields_for :image do |s|
+      = s.label :name, "商品画像"
+      = s.file_field :name, placeholder: '必須'
+
+
+
   .product-name 
     = f.label :name, "商品名"
     = f.text_field :name, placeholder: '必須'
   .product-text 
     = f.label :text, "商品説明"
     = f.text_area :text, placeholder: '必須'
-
   .product-datas
     .info 
       商品情報
-      -# .info__category 
-      -#   = f.label :category, "カテゴリ"
-      -#   = f.text_field :category, placeholder: '必須'
+      .info__category 
+        = f.label :category_id, "カテゴリ"
+        = f.text_field :category_id, placeholder: '必須'
       .info__status 
         = f.label :condition, "商品の状態"
         = f.text_field :condition, placeholder: '必須'
