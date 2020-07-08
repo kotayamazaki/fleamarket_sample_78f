@@ -144,13 +144,13 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position-x:center;
-    .topMiddleDL__inner {
+    &__inner {
       max-width: 1280px;
       width: 100%;
       margin: 0 auto;
       padding: 35px 0 0 0;
       .subtitle{
-        font-size: 60px;
+        font-size: 27px;
         color: #fff;
         text-shadow: 0 0 5px rgba(0,0,0,0.4);
         line-height: 1.2;
@@ -159,8 +159,8 @@
         text-shadow:0 0 5px rgba(0,0,0,0.4) ;
         font-size: 18px;
         color: #fff;
-        line-height: 1.77778;
-        margin: 16px 0 0 0;
+        line-height: 1.5;
+        margin: 20px 0 30px;
       }
       .content_btn{
         display: flex;
@@ -243,17 +243,17 @@
   .inner{
     color: #fff;
     text-align: center;
-    .inner__title{
+    &__title{
       text-shadow: 0 0 5px rgba(0,0,0,0.4);
       font-size: 24px;
       font-weight: bold;
       line-height: 1.4;
     }
-    .inner__text{
+    &__text{
         font-size: 35px;
         text-shadow: 0 0 5px rgba(0,0,0,0.4);;
     }
-    .inner__icon{
+    &__icon{
       width: 100%;
       display: flex;
       justify-content: center;
@@ -269,6 +269,7 @@
   color: #fff;
   background-color: #272727;
   text-align: center;
+  width: 100vw;
   .contents{
     display: flex;
     max-width: 840px;
@@ -278,13 +279,16 @@
       flex-direction: column;
       width: calc(1/3 * 100%);
       margin: 0 2% 0 0;
-      .content__head{
+      &__head{
         margin: 0 0 20px;
         font-size: 16px;
         font-weight: bold;
-        .ul{
-          list-style: none;
-        }
+      }
+      &__text{
+        display: block;
+        list-style: none;
+        font-size: 6px;
+        line-height: 32px;
       }
     }
   }
