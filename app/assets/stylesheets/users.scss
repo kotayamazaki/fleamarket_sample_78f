@@ -1,3 +1,70 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// マイページ用のscssです
+.my-page{
+  background-color:#f5f5f5;;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .my-page__main{
+    height: 100vh;
+    width: 1000px;
+    background-color:#f5f5f5;;
+    display: flex;
+    .my-page__side-box{
+      width: 280px;
+      background-color:#f5f5f5;
+      &__contents{
+        line-height: 1.5;
+        padding-top: 20px;
+        &__section{
+          &__title{
+            font-size: 20px; 
+            font-weight: bold;
+            padding-bottom: 10px;
+          }
+          &__list{
+            background-color: #fff;
+            &__profile-register{
+              border: 1px solid #e5e5e5;
+            }
+            &__profile-edit{
+              border: 1px solid #e5e5e5;
+            }
+            &__login{
+              border: 1px solid #e5e5e5;
+            }
+            &__logout{
+              border: 1px solid #e5e5e5;
+            }              
+            &__cledit-register{
+              border: 1px solid #e5e5e5;
+            }
+            &__cledit-edit{
+              border: 1px solid #e5e5e5;
+            }
+            &__Exhibition{
+              border: 1px solid #e5e5e5;
+            }
+            &__Purchase{
+              border: 1px solid #e5e5e5;
+            }
+            &__Inquiry{
+              border: 1px solid #e5e5e5;
+            }
+            &__Sales{
+              border: 1px solid #e5e5e5;
+            }
+          }
+        }
+      }
+    }
+    .my-page__main-box{
+      background-color: #fff;
+      width: 720px;
+      display: flex;
+      &__title{
+        font-size: 20px; 
+        font-weight: bold;
+      }
+    }
+  }
+}
