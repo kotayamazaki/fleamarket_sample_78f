@@ -45,7 +45,7 @@
             .my-page__side-box__contents__section__list__logout
               = link_to "ログアウト", destroy_user_session_path, method: :delete
             .my-page__side-box__contents__section__list__cledit-register
-              クレジットカード登録
+              = link_to "クレジットカード登録", card_new_path, method: :get
             .my-page__side-box__contents__section__list__cledit-edit
               クレジットカード情報編集
             .my-page__side-box__contents__section__list__Exhibition
@@ -57,7 +57,7 @@
             .my-page__side-box__contents__section__list__Sales
               売上
     .my-page__main-box
-      %h2.my-page__main-box__title ○○さんのマイページ
+      %h2.my-page__main-box__title #{current_user.nickname}さんのマイページ
       .my-page__main-box__panel
         .my-page__main-box__panel__heading
           %h2.my-page__main-box__panel__purchase 購入履歴
