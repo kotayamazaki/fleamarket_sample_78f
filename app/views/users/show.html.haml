@@ -31,30 +31,30 @@
 
 .my-page
   .my-page__main
-    .my-page__side-box
-      .my-page__side-box__contents
-        .my-page__side-box__contents__section
-          %h2.my-page__side-box__contents__section__title マイページメニュー 
-          .my-page__side-box__contents__section__list
-            .my-page__side-box__contents__section__list__profile-register
+    .my-page__main__side-box
+      .my-page__main__side-box__contents
+        .my-page__main__side-box__contents__section
+          %h2.my-page__main__side-box__contents__section__title マイページメニュー 
+          .my-page__main__side-box__contents__section__list
+            .my-page__main__side-box__contents__section__list__profile-register
               プロフィール登録
-            .my-page__side-box__contents__section__list__profile-edit
+            .my-page__main__side-box__contents__section__list__profile-edit
               プロフィール編集
-            .my-page__side-box__contents__section__list__login
+            .my-page__main__side-box__contents__section__list__login
               = link_to "ログイン", new_user_session_path, class: 'post'
-            .my-page__side-box__contents__section__list__logout
+            .my-page__main__side-box__contents__section__list__logout
               = link_to "ログアウト", destroy_user_session_path, method: :delete
-            .my-page__side-box__contents__section__list__cledit-register
+            .my-page__main__side-box__contents__section__list__cledit-register
               = link_to "クレジットカード登録", card_path, method: :get
-            .my-page__side-box__contents__section__list__cledit-edit
+            .my-page__main__side-box__contents__section__list__cledit-edit
               クレジットカード情報編集
-            .my-page__side-box__contents__section__list__Exhibition
+            .my-page__main__side-box__contents__section__list__Exhibition
               出品した商品
-            .my-page__side-box__contents__section__list__Purchase
+            .my-page__main__side-box__contents__section__list__Purchase
               購入した商品
-            .my-page__side-box__contents__section__list__Inquiry
+            .my-page__main__side-box__contents__section__list__Inquiry
               お問い合わせ
-            .my-page__side-box__contents__section__list__Sales
+            .my-page__main__side-box__contents__section__list__Sales
               売上
     .my-page__main-box
       %h2.my-page__main-box__title #{current_user.nickname}さんのマイページ
