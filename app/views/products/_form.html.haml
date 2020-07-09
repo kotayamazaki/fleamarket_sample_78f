@@ -1,25 +1,32 @@
 = form_for @product do |f|
-  商品名#{f.text_field :name}
+  #image-box
+    = f.fields_for :images do |i|
+      .js-file_group{"data-index" => "#{i.index}"}
+        = i.file_field :name, class: 'js-file'
+        %br/
+        %span.js-remove 削除
+  商品名#{f.text_field :name, placeholder: '40文字まで', class: "product-name"}
   %br/
-  価格#{f.number_field :price}
+  商品説明#{f.text_area :text, placeholder: '商品の説明（必須　1,000文字以内）', class: "product-text"}
   %br/
-  商品説明#{f.text_area :text}
-  %br/
-  カテゴリ#{f.text_field :category_id}
-  %br/
-  商品の状態#{f.text_field :condition}
-  %br/
-  配送料の負担#{f.text_field :postage}
-  %br/
-  発送日の目安#{f.text_field :days}
-  %br/
-  発送エリア#{f.text_field :area}
-  %br/
+  .product-datas
+    .info
+      カテゴリ#{f.text_field :category_id, placeholder: '必須', class: "info__category"}
+      %br/
+      商品の状態#{f.text_field :condition, placeholder: '必須', class: "info__status"}
+      %br/
+    .shipping   
+      配送料の負担#{f.text_field :postage, placeholder: '必須', class: "shipping__postage"}
+      %br/
+      発送日の目安#{f.text_field :days, placeholder: '必須', class: "shipping__days"}
+      %br/
+      発送エリア#{f.text_field :area, placeholder: '必須', class: "shipping__area"}
+      %br/
+    .price
+      価格#{f.number_field :price, placeholder: '0', class: ".price__date"}
+      %br/
 
-  
-  = f.fields_for :images do |i|
-    = i.file_field :name
-    %br/
   = f.submit
-  -# fields_forメソッドを利用する際に、親モデルの中に書く必要があるメソッドとして、”accepts_nested_attributes_for”がある。
-  -# form_forメソッドを使用して、ネストの関係性でfields_forを利用してあげる。そうする事で、image画像を追加するためのfile_fieldメソッドを使用する事ができる。
+
+-# fields_forメソッドを利用する際に、親モデルの中に書く必要があるメソッドとして、”accepts_nested_attributes_for”がある。
+-# form_forメソッドを使用して、ネストの関係性でfields_forを利用してあげる。そうする事で、image画像を追加するためのfile_fieldメソッドを使用する事ができる。
