@@ -1,54 +1,56 @@
-%h1 Products#new
-%p Find me in app/views/products/new.html.haml
+-# %h1 Products#new
+-# %p Find me in app/views/products/new.html.haml
 
 
 
-%h1 商品出品
-= form_with model: @product, local: true do |f|
+-# %h1 商品出品
+-# = form_with model: @product, local: true do |f|
 
 
-  .product-image 
-    = f.fields_for :image do |s|
-      = s.label :name, "商品画像"
-      = s.file_field :name, placeholder: '必須'
+-#   .product-image 
+-#     = f.fields_for :image do |s|
+-#       = s.label :name, "商品画像"
+-#       = s.file_field :name, placeholder: '必須'
 
 
 
-  .product-name 
-    = f.label :name, "商品名"
-    = f.text_field :name, placeholder: '必須'
-  .product-text 
-    = f.label :text, "商品説明"
-    = f.text_area :text, placeholder: '必須'
-  .product-datas
-    .info 
-      商品情報
-      .info__category 
-        = f.label :category_id, "カテゴリ"
-        = f.text_field :category_id, placeholder: '必須'
-      .info__status 
-        = f.label :condition, "商品の状態"
-        = f.text_field :condition, placeholder: '必須'
+-#   .product-name 
+-#     = f.label :name, "商品名"
+-#     = f.text_field :name, placeholder: '必須'
+-#   .product-text 
+-#     = f.label :text, "商品説明"
+-#     = f.text_area :text, placeholder: '必須'
+-#   .product-datas
+-#     .info 
+-#       商品情報
+-#       .info__category 
+-#         = f.label :category_id, "カテゴリ"
+-#         = f.text_field :category_id, placeholder: '必須'
+-#       .info__status 
+-#         = f.label :condition, "商品の状態"
+-#         = f.text_field :condition, placeholder: '必須'
 
-  .shipping 
-    発送について
-    .shipping__postage 
-      = f.label :postage, "配送料の負担"
-      = f.text_field :postage, placeholder: '必須'
+-#   .shipping 
+-#     発送について
+-#     .shipping__postage 
+-#       = f.label :postage, "配送料の負担"
+-#       = f.text_field :postage, placeholder: '必須'
 
-    .shipping__days 
-      = f.label :days, "発送日の目安"
-      = f.text_field :days, placeholder: '必須'
+-#     .shipping__days 
+-#       = f.label :days, "発送日の目安"
+-#       = f.text_field :days, placeholder: '必須'
 
-    .shipping__area 
-      = f.label :area, "発送エリア"
-      = f.text_field :area, placeholder: '必須'
+-#     .shipping__area 
+-#       = f.label :area, "発送エリア"
+-#       = f.text_field :area, placeholder: '必須'
 
 
-  .price 
-    価格について
-    .price__date 
-    = f.label :price, "価格"
-    = f.number_field :price, placeholder: 'グループ名を入力してください'
+-#   .price 
+-#     価格について
+-#     .price__date 
+-#     = f.label :price, "価格"
+-#     = f.number_field :price, placeholder: 'グループ名を入力してください'
 
-  = f.submit
+-#   = f.submit
+
+= render partial: 'form'

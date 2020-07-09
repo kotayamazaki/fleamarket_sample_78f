@@ -1,25 +1,38 @@
 class ProductsController < ApplicationController
 
+  def index
+    @products = Product.includes(:images).order('created_at DESC')
+    # includesメソッドで記述する際には、親モデルに対して子モデルの命名は複数形で記述する。
+    # orderメソッドはDESCで記述すると指定したカラムの新しい順で記述する事ができる。
+  end
+
   def new
     @product = Product.new
-    # @product.seller << current_user
-    # @image = Image.new
+    @product.images.new
+    # @productの中に、newメソッドを追記したい場合は、改行して上記のように記述する。
+    # newメソッドとbuildメソッドの違いは、昔はbuildメソッドを使用しないと上手くnewができなかったが、今ではnewメソッドでできるようになっているのでbuildメソッドは使わない。
   end
 
   def create
     @product = Product.new(product_params)
-    # binding.pry
     if @product.save 
-      # @image.save
       redirect_to root_path
     else
       render :new
     end
   end
 
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
+  end
+
   def product_params
     params.require(:product).permit(:name, 
-                                    # :name, 
                                     :text, 
                                     :category_id, 
                                     :condition, 
@@ -27,7 +40,7 @@ class ProductsController < ApplicationController
                                     :days, 
                                     :area, 
                                     :price,
-                                    image_attributes: [:name, :product_id]
+                                    images_attributes:[:name]
                                     ).merge(seller_id: current_user.id)
   end
 

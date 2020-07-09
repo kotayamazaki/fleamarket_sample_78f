@@ -1,0 +1,25 @@
+= form_for @product do |f|
+  商品名#{f.text_field :name}
+  %br/
+  価格#{f.number_field :price}
+  %br/
+  商品説明#{f.text_area :text}
+  %br/
+  カテゴリ#{f.text_field :category_id}
+  %br/
+  商品の状態#{f.text_field :condition}
+  %br/
+  配送料の負担#{f.text_field :postage}
+  %br/
+  発送日の目安#{f.text_field :days}
+  %br/
+  発送エリア#{f.text_field :area}
+  %br/
+
+  
+  = f.fields_for :images do |i|
+    = i.file_field :name
+    %br/
+  = f.submit
+  -# fields_forメソッドを利用する際に、親モデルの中に書く必要があるメソッドとして、”accepts_nested_attributes_for”がある。
+  -# form_forメソッドを使用して、ネストの関係性でfields_forを利用してあげる。そうする事で、image画像を追加するためのfile_fieldメソッドを使用する事ができる。
