@@ -35,6 +35,8 @@ class ProductsController < ApplicationController
   end
 
   def destroy
+    @product.destroy
+    redirect_to root_path
   end
 
   def product_params
@@ -49,7 +51,7 @@ class ProductsController < ApplicationController
                                     images_attributes:[:name, :_destroy, :id]
                                     ).merge(seller_id: current_user.id)
   end
-  
+
   def set_product
     @product = Product.find(params[:id])
   end
