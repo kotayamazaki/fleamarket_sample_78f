@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :set_product, except: [:index, :new, :create]
 
   def index
     @products = Product.includes(:images).order('created_at DESC')
@@ -26,6 +27,11 @@ class ProductsController < ApplicationController
   end
 
   def update
+    if @product.update(product_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -40,9 +46,12 @@ class ProductsController < ApplicationController
                                     :days, 
                                     :area, 
                                     :price,
-                                    images_attributes:[:name]
+                                    images_attributes:[:name, :_destroy, :id]
                                     ).merge(seller_id: current_user.id)
   end
-
+  
+  def set_product
+    @product = Product.find(params[:id])
+  end
 
 end

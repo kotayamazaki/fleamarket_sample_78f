@@ -5,6 +5,13 @@
         = i.file_field :name, class: 'js-file'
         %br/
         %span.js-remove 削除
+      - if @product.persisted?
+        = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+    - if @product.persisted?
+      .js-file_group{"data-index" => "#{@product.images.count}"}
+        = file_field_tag :name, name: "product[images_attributes][#{@product.images.count}][name]", class: 'js-file'
+        .js-remove 削除
+        
   商品名#{f.text_field :name, placeholder: '40文字まで', class: "product-name"}
   %br/
   商品説明#{f.text_area :text, placeholder: '商品の説明（必須　1,000文字以内）', class: "product-text"}
@@ -30,3 +37,23 @@
 
 -# fields_forメソッドを利用する際に、親モデルの中に書く必要があるメソッドとして、”accepts_nested_attributes_for”がある。
 -# form_forメソッドを使用して、ネストの関係性でfields_forを利用してあげる。そうする事で、image画像を追加するためのfile_fieldメソッドを使用する事ができる。
+
+
+= form_for @product do |f|
+  商品名#{f.text_field :name}
+  %br/
+  価格#{f.number_field :price}
+  %br/
+  #image-box
+    = f.fields_for :images do |image|
+      .js-file_group{"data-index" => "#{image.index}"}
+        = image.file_field :src, class: 'js-file'
+        %br/
+        %span.js-remove 削除
+      - if @product.persisted?
+        = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+    - if @product.persisted?
+      .js-file_group{"data-index" => "#{@product.images.count}"}
+        = file_field_tag :src, name: "product[images_attributes][#{@product.images.count}][src]", class: 'js-file'
+        .js-remove 削除
+  = f.submit
