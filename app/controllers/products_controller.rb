@@ -17,13 +17,13 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      flash[:notice] = "メッセージを送信しました"
+      flash[:notice] = "出品が確認できました"
       # 通知機能は下のファイルにて実装
       # app/views/layouts/application.html.haml
       redirect_to root_path
     else    
       @product.images.new
-      flash.now[:alert] = "メッセージを入力してください"
+      flash.now[:alert] = "出品できません、もう一度入力してください"
       render :new
     end
   end
@@ -40,8 +40,12 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @product.destroy
-    redirect_to root_path
+    if @product.destroy
+      redirect_to root_path
+    else
+      render :index
+      flash.now[:alert] = "削除できませんでした"
+    end
   end
 
   def product_params
