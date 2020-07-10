@@ -3,7 +3,7 @@
     #previews
     - if @product.persisted?
       - @product.images.each_with_index do |image, i|
-        = image_tag image.src.url, data: { index: i }, width: "100", height: '100'
+        = image_tag image.name.url, data: { index: i }, width: "100", height: '100'
     = f.fields_for :images do |image|
       .js-file_group{"data-index" => "#{image.index}"}
         = image.file_field :name, class: 'js-file'
