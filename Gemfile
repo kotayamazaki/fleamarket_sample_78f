@@ -64,10 +64,13 @@ group :production do
   gem 'unicorn'
 end
 
+gem 'pry-rails'
 gem 'devise'
 gem "haml-rails", ">= 1.0", '<= 2.0.1'
 gem 'coderay', '1.1.2'
 gem 'font-awesome-sass'
 gem 'payjp'
 gem 'dotenv-rails' #PAY.jpに必要
-gem "jquery-rails" #PAY.jpに必要
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'jquery-rails'

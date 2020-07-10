@@ -1,0 +1,47 @@
+-# 商品購入確認ページを一度こちらもファイルに遷移しておくものとする。
+.Header
+  .Header__logo
+    = image_tag "product_image/logo.png", class: "main-logo"
+
+.MainContents
+  .MainContents__box
+    %section.sub-content
+      .ContentTitle
+        購入内容の確認
+
+    %section.sub-content
+      .PayLists
+        = image_tag "product_image/icon-search 1.png", class: "product-logo"
+        -# 上記のイメージには購入するで進んだ際に選んだ商品の画像のカラムが入るようにする。
+        .PayLists__name
+          商品名
+          .PayLists__price 
+            値段
+            -# 上記には購入ボタンを押した際に、テーブルに保存されたカラムを表示するうようにする。
+    
+    %section.sub-content
+      .TotalMoney
+        .TotalMoney__title
+          支払い金額
+        .TotalMoney__price
+          ¥ 10,000
+    -# このセクションも選択したものの合計金額になるようにメソッド？を指定する必要がある。
+
+    %section.sub-content
+      .CreditPay
+        支払い方法 (後に選択肢を選べるようにする)
+        -# cledit登録ページとの連携が必要
+
+    %section.sub-content
+      .SendMethod
+        配送先 (後に選択肢を選べるようにする)
+        -# 配送先編集ページとの連携が必要
+
+    .Confirmation-box
+      .Confirmation-box__text
+        ※配送先と支払い方法の入力を完了してください。
+      %input{type: "submit", class:'Confirmation-box__btn', value:'購入する'} 
+
+
+.Footer
+  = image_tag "product_image/logo-white.png", class: "sab-logo"

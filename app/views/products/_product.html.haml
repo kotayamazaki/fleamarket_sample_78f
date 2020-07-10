@@ -1,0 +1,13 @@
+.content
+  %p
+    = product.name
+  %p
+    = product.price
+
+  - product.images.each do |image|
+    = image_tag image.name.url
+    -# 親モデルと子モデルの関係性として、子モデルには複数形での記述なる。保存先のカラム名を間違えないように記述する。.urlとして記述する理由は分からないが、テーブルに保存する際に、URLで保存されるからか？
+
+  - if user_signed_in? && current_user.id == product.seller_id
+    = link_to '編集', edit_product_path(product)
+    = link_to '削除', product_path(product), method: :delete
