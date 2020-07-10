@@ -1,4 +1,12 @@
-= form_for @product do |f|
+= form_with(model: @product, local: true) do |f|
+  - if @product.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@product.errors.count, "error")
+        prohibited this product from being saved:
+      %ul
+        - @product.errors.full_messages.each do |message|
+          %li= message
   #image-box
     #previews
     - if @product.persisted?
@@ -15,26 +23,54 @@
       .js-file_group{"data-index" => "#{@product.images.count}"}
         = file_field_tag :name, name: "product[images_attributes][#{@product.images.count}][name]", class: 'js-file'
         .js-remove 削除
-  商品名#{f.text_field :name, placeholder: '40文字まで', class: "product-name"}
-  %br/
-  商品説明#{f.text_area :text, placeholder: '商品の説明（必須　1,000文字以内）', class: "product-text"}
-  %br/
+    - if @product.errors.include?(:name)
+      %p{style: "color: red;"}= @product.errors.full_messages_for(:name).first
+  .field
+    商品名#{f.text_field :name, placeholder: '20文字まで', class: "product-name"}
+    - if @product.errors.include?(:name)
+      %p{style: "color: red;"}= @product.errors.full_messages_for(:name).first
+    %br/
+  .field  
+    商品説明#{f.text_area :text, placeholder: '商品の説明（必須　1,000文字以内）', class: "product-text"}
+    - if @product.errors.include?(:text)
+      %p{style: "color: red;"}= @product.errors.full_messages_for(:text).first
+    %br/
   .product-datas
-    .info
-      カテゴリ#{f.text_field :category_id, placeholder: '必須', class: "info__category"}
-      %br/
-      商品の状態#{f.text_field :condition, placeholder: '必須', class: "info__status"}
-      %br/
-    .shipping   
-      配送料の負担#{f.text_field :postage, placeholder: '必須', class: "shipping__postage"}
-      %br/
-      発送日の目安#{f.text_field :days, placeholder: '必須', class: "shipping__days"}
-      %br/
-      発送エリア#{f.text_field :area, placeholder: '必須', class: "shipping__area"}
-      %br/
+    %p.info
+      商品の詳細　
+      .info__category
+        カテゴリ#{f.text_field :category_id, placeholder: '必須'}
+        - if @product.errors.include?(:category_id)
+          %p{style: "color: red;"}= @product.errors.full_messages_for(:category_id).first
+        %br/
+      .info__status
+        .info__status
+        商品の状態#{f.text_field :condition, placeholder: '必須'}
+        - if @product.errors.include?(:condition)
+          %p{style: "color: red;"}= @product.errors.full_messages_for(:condition).first
+        %br/
+    .shipping
+      .shipping__postage   
+        配送料の負担#{f.text_field :postage, placeholder: '必須'}
+        - if @product.errors.include?(:postage)
+          %p{style: "color: red;"}= @product.errors.full_messages_for(:postage).first
+        %br/
+      .shipping__days
+        発送日の目安#{f.text_field :days, placeholder: '必須'}
+        - if @product.errors.include?(:days)
+          %p{style: "color: red;"}= @product.errors.full_messages_for(:days).first
+        %br/
+      .shipping__area
+        発送エリア#{f.text_field :area, placeholder: '必須'}
+        - if @product.errors.include?(:area)
+          %p{style: "color: red;"}= @product.errors.full_messages_for(:area).first
+        %br/
     .price
-      価格#{f.number_field :price, placeholder: '0', class: ".price__date"}
-      %br/
+      .price__date
+        価格#{f.number_field :price, placeholder: '0'}
+        - if @product.errors.include?(:price)
+          %p{style: "color: red;"}= @product.errors.full_messages_for(:price).first
+        %br/
 
   = f.submit
 

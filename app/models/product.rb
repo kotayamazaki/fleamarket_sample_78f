@@ -15,4 +15,13 @@ class Product < ApplicationRecord
   # accepts_nested_attributes_forメソッドのオプションとして、引数に書くことができる記述です。このオプションをつけることで、親のレコードが削除された場合に、関連付いている子のレコードも一緒に削除してくれます。
 
   validates :images, :name, :text, :price, :condition, :area, :postage, :days, presence: true
+  validates :name,
+    presence: true,
+    length: {maximum: 20}
+
+  validates :price,
+    numericality: {
+      greater_than_or_equal_to: 100,
+      less_than: 100000
+    }
 end
