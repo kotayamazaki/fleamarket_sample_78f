@@ -1,0 +1,89 @@
+.header
+  .logo
+    =link_to root_path do
+      = image_tag "logo.png", size: "185x49", alt: "フリマのアイコン"
+  .search
+    = form_with(local: true, method: :get, class: "search-form") do |f|
+      = f.text_field :keyword, placeholder: "何かお探しですか？", class: "search-input"
+      %button{type: "submit", class:'btn'}
+        %i.fas.fa-search
+.menu
+  .category カテゴリ
+- if user_signed_in?
+  / ユーザーがログインしているか調べる
+  / ユーザーがログインしていた時の処理
+  %h2
+    現在 #{current_user.nickname} さんがログインしています
+  / ここを追加します
+  %h4
+    メールアドレス： #{current_user.email}
+  = link_to "ログアウト", destroy_user_session_path, method: :delete
+  / ログアウトをする
+- else
+  / ユーザーがログインしていなかった時の処理
+  %h2 現在ログインしていません
+  = link_to "ログイン", new_user_session_path, class: 'post'
+  / ログイン画面に移行する
+  = link_to "新規登録", new_user_registration_path, class: 'post'
+  / 新規登録画面に移行する
+
+  ///////  ↑部分テンプレートを作り、renderで繋げる
+
+.my-page
+  .my-page__main
+    .my-page__side-box
+      .my-page__side-box__contents
+        .my-page__side-box__contents__section
+          %h2.my-page__side-box__contents__section__title マイページメニュー 
+          .my-page__side-box__contents__section__list
+            .my-page__side-box__contents__section__list__profile-register
+              プロフィール登録
+            .my-page__side-box__contents__section__list__profile-edit
+              プロフィール編集
+            .my-page__side-box__contents__section__list__login
+              = link_to "ログイン", new_user_session_path, class: 'post'
+            .my-page__side-box__contents__section__list__logout
+              ログアウト
+            .my-page__side-box__contents__section__list__cledit-register
+              クレジットカード登録
+            .my-page__side-box__contents__section__list__cledit-edit
+              クレジットカード情報編集
+            .my-page__side-box__contents__section__list__Exhibition
+              出品した商品
+            .my-page__side-box__contents__section__list__Purchase
+              購入した商品
+            .my-page__side-box__contents__section__list__Inquiry
+              お問い合わせ
+            .my-page__side-box__contents__section__list__Sales
+              売上
+    .my-page__main__l-content
+      
+
+
+///////  ↓部分テンプレートを作り、renderで繋げる
+.appfooter
+  %ul.contents
+    %li.content
+      .content__head
+        %h2 FURIMAについて
+      %Ul.content__text
+        %li 会社概要(運営会社)
+        %li プライバシーポリシー
+        %li FURIMA利用規約
+        %li ポイントに関する特約
+    %li.content
+      .content__head
+        %h2 FURIMAを見る
+      %Ul.content__text
+        %li カテゴリー一覧
+        %li ブランド一覧
+    %li.content
+      .content__head
+        %h2 ヘルプ＆ガイド
+      %Ul.content__text
+        %li FURIMAガイド
+        %li FURIMAロゴ利用ガイドライン
+        %li お知らせ
+  .footer__logo
+    = image_tag "logo-white.png", size: "185x49", alt: "フリマのアイコン"
+    %p © FURIMA
