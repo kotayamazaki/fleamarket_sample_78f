@@ -13,7 +13,7 @@ class CardController < ApplicationController
     else
       customer = Payjp::Customer.create(
       description: '登録テスト', #なくてもOK
-      email: current_user.email, #なくてもOK
+      # email: current_user.email, #なくてもOK
       card: params['payjp-token'],
       metadata: {user_id: current_user.id}
       ) #念の為metadataにuser_idを入れましたがなくてもOK
