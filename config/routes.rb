@@ -10,4 +10,7 @@ Rails.application.routes.draw do
       post 'delete', to: 'card#delete'
     end
   end
+  resources :products, except: :show
+  resources :card, only: [:new, :show] 
+  root 'items#index'
 end
