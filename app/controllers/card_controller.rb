@@ -3,8 +3,6 @@ class CardController < ApplicationController
 
   def new
     redirect_to action: "show"if Card.exists?(user_id: current_user.id)
-    # card = Card.where(user_id: current_user.id)
-    # redirect_to action: "show" if card.exists?
   end
 
   def pay #payjpとCardのデータベース作成を実施します。
@@ -29,18 +27,17 @@ class CardController < ApplicationController
 
   def delete #PayjpとCardデータベースを削除します
     card = Card.find_by(user_id: current_user.id)
-    if card.blank?
-    else
-      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
       customer = Payjp::Customer.retrieve(card.customer_id)
       customer.delete
       card.delete
+    if card.blank?
     end
       redirect_to action: "new"
   end
 
   def show #Cardのデータpayjpに送り情報を取り出します
-    card = Card.where(user_id: current_user.id).first
+    card = Card.find_by(user_id: current_user.id)
     if card.blank?
       redirect_to action: "new" 
     else
