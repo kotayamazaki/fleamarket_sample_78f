@@ -43,14 +43,14 @@
         .form-title
           %p.form-title__name 商品の説明
           %P.form-title__reqire 必須
-        = f.text_area :text, placeholder: '商品の説明（必須　1,000文字以内）', class: "input-default"
+        = f.text_area :text, placeholder: '商品の説明（必須　1,000文字以内）', class: "input-default text-area"
         - if @product.errors.include?(:text)
           %p{style: "color: red;"}= @product.errors.full_messages_for(:text).first
         %br/
       %hr/
       .product-datas
         %p.info
-          商品の詳細
+          %p.titles 商品の詳細
           .info__category.field
             .form-title
               %p.form-title__name カテゴリー
@@ -69,7 +69,7 @@
             %br/
         %hr/
         %p.shipping
-          発送について
+          %p.titles 発送について
           .shipping__postage.field
             .form-title
               %p.form-title__name 配送料の負担
@@ -96,7 +96,7 @@
             %br/
         %hr/
         %p.price
-          %p 価格（￥300〜￥100,000）
+          %p.titles 価格（￥300〜￥100,000）
           .price__date.field
             .form-title
               %p.form-title__name 販売価格

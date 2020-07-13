@@ -38,7 +38,7 @@
   background: #fff;
   line-height: 1.5;
   font-size: 16px;
-  margin-top: 8px;
+  margin-top: 5px;
 }
 
 .Exhibitionーbutton {
@@ -53,21 +53,32 @@
   // text-align: center;
 }
 
+.text-area {
+  height: 200px;
+}
+
+.titles {
+  color: #757575;
+  font-size: 16px;
+}
+
 .form-title {
   display: flex;
   height: 40px;
 
-  &__naeme {}
+  &__naeme {
+    font-size: 20px;
+  }
 
   &__reqire {
-    background-color: red;
+    background-color: #ea352d;
     padding: 0px 10px;
     font-size: 12px;
     margin-left: 10px;
     border-radius: 5px;
-    line-height: 40px;
+    line-height: 30px;
     color: #ffffff;
     font-weight: bold;
-    ;
+    height: 30px;
   }
 }
