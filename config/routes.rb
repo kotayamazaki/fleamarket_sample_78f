@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users, only: [:index, :edit, :update, :show, :destroy]
   resources :products, only: [:index]
-  root 'products#index'
+  root 'items#index'
   resources :card, only: [:new, :show] do
     collection do
       post 'show', to: 'card#show'
@@ -10,7 +10,7 @@ Rails.application.routes.draw do
       post 'delete', to: 'card#delete'
     end
   end
-  resources :products, except: :show
-  resources :card, only: [:new, :show] 
-  root 'items#index'
+  # resources :products, except: :show
+  # resources :card, only: [:new, :show] 
+  # root 'items#index'
 end
