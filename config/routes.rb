@@ -7,7 +7,8 @@ Rails.application.routes.draw do
     collection do
       post 'show', to: 'card#show'
       post 'pay', to: 'card#pay'
-      post 'delete', to: 'card#delete'
+      post 'delete', to: 'card#delete' 
     end
+    # ↑今後使用することがなくなったときに削除する。(collection doから)
   end
 end
