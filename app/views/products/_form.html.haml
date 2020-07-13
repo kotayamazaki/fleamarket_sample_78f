@@ -30,61 +30,77 @@
             .js-remove 削除
         - if @product.errors.include?(:name)
           %p{style: "color: red;"}= @product.errors.full_messages_for(:name).first
+      %hr/
       .name-field.field
-        %hr/
-        %p 商品名
+        .form-title
+          %p.form-title__name 商品名
+          %P.form-title__reqire 必須
         = f.text_field :name, placeholder: '20文字まで', class: "input-default"
         - if @product.errors.include?(:name)
           %p{style: "color: red;"}= @product.errors.full_messages_for(:name).first
         %br/
       .text-field.field
-        %p 商品の説明
-        = f.text_area :text, placeholder: '商品の説明（必須　1,000文字以内）', class: "input-default"
+        .form-title
+          %p.form-title__name 商品の説明
+          %P.form-title__reqire 必須
+        = f.text_area :text, placeholder: '商品の説明（必須　1,000文字以内）', class: "input-default text-area"
         - if @product.errors.include?(:text)
           %p{style: "color: red;"}= @product.errors.full_messages_for(:text).first
         %br/
+      %hr/
       .product-datas
         %p.info
-          %hr/
-          商品の詳細
+          %p.titles 商品の詳細
           .info__category.field
-            %p カテゴリー
+            .form-title
+              %p.form-title__name カテゴリー
+              %P.form-title__reqire 必須   
             #{f.text_field :category_id, placeholder: '必須', class: "input-default"}
             - if @product.errors.include?(:category_id)
               %p{style: "color: red;"}= @product.errors.full_messages_for(:category_id).first
             %br/
           .info__status.field
-            %p 商品の状態
+            .form-title
+              %p.form-title__name 商品の状態
+              %P.form-title__reqire 必須   
             = f.select :condition, {'新品未使用': 1, '未使用に近い': 2, '目立った傷や汚れなし': 3, 'やや傷や汚れあり': 4, '傷や汚れあり': 5, '全体的に状態が悪い': 6}, { include_blank: '選択してください'}, {class: "input-default" , required: true }
             - if @product.errors.include?(:condition)
               %p{style: "color: red;"}= @product.errors.full_messages_for(:condition).first
             %br/
+        %hr/
         %p.shipping
-          %hr/
-          発送について　
-          .shipping__postage.field   
-            %p 配送料の負担
+          %p.titles 発送について
+          .shipping__postage.field
+            .form-title
+              %p.form-title__name 配送料の負担
+              %P.form-title__reqire 必須   
             = f.select :postage, {'送料込み(あなたが負担)': '送料込み(あなたが負担)', '着払い(購入者が負担)': '着払い(購入者が負担)'}, { include_blank: '選択してください'}, { class: "input-default" , required: true }
             - if @product.errors.include?(:postage)
               %p{style: "color: red;"}= @product.errors.full_messages_for(:postage).first
             %br/
           .shipping__area.field
-            %p 発送元の地域
+            .form-title
+              %p.form-title__name 発送元の地域
+              %P.form-title__reqire 必須   
             = f.text_field :area, placeholder: '必須', class: "input-default"
             - if @product.errors.include?(:area)
               %p{style: "color: red;"}= @product.errors.full_messages_for(:area).first
             %br/
           .shipping__days.field
-            %p 発送までの日数
+            .form-title
+              %p.form-title__name 発送までの日数
+              %P.form-title__reqire 必須   
             = f.select :days, {'支払い後，１〜２日で発送': 1, '支払い後，2〜3日で発送': 2, '支払い後，4〜7日で発送': 3}, { include_blank: '選択してください'}, {class: "input-default",required: true }
             - if @product.errors.include?(:days)
               %p{style: "color: red;"}= @product.errors.full_messages_for(:days).first
             %br/
+        %hr/
         %p.price
-          %hr/
-          %p 価格（￥300〜￥100,000）
+          %p.titles 価格（￥300〜￥100,000）
           .price__date.field
-            %p 販売価格
+            .form-title
+              %p.form-title__name 販売価格
+              %P.form-title__reqire 必須   
             = f.number_field :price, placeholder: '0', class: "input-default"
             - if @product.errors.include?(:price)
               %p{style: "color: red;"}= @product.errors.full_messages_for(:price).first
