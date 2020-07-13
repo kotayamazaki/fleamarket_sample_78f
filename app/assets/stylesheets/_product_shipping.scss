@@ -1,0 +1,84 @@
+// 商品出品ページ
+.Exhibition {
+  padding: 30px;
+  width: 80%;
+  margin: 100px auto;
+  font-size: 16px;
+
+  &__logo {
+    display: block;
+    margin: 80px auto;
+    width: 350px;
+    height: 100px;
+  }
+
+  &__form {
+    font-size: 20px;
+    // background-color: #f5f5f5;
+    // background-color: #ffffff;
+    margin: 30px auto;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.field {
+  background-color: #ffffff;
+  padding: 20px;
+  margin: 30px 0;
+}
+
+.input-default {
+  width: 600px;
+  height: 48px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.Exhibitionーbutton {
+  width: 100%;
+  line-height: 48px;
+  font-size: 18px;
+  border-radius: 4px;
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  cursor: pointer;
+  // text-align: center;
+}
+
+.text-area {
+  height: 200px;
+}
+
+.titles {
+  color: #757575;
+  font-size: 16px;
+}
+
+.form-title {
+  display: flex;
+  height: 40px;
+
+  &__naeme {
+    font-size: 20px;
+  }
+
+  &__reqire {
+    background-color: #ea352d;
+    padding: 0px 10px;
+    font-size: 12px;
+    margin-left: 10px;
+    border-radius: 5px;
+    line-height: 30px;
+    color: #ffffff;
+    font-weight: bold;
+    height: 30px;
+  }
+}
