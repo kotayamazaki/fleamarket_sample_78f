@@ -31,20 +31,22 @@
         - if @product.errors.include?(:name)
           %p{style: "color: red;"}= @product.errors.full_messages_for(:name).first
       .name-field.field
+        %hr/
         %p 商品名
-        #{f.text_field :name, placeholder: '20文字まで', class: "input-default"}
+        = f.text_field :name, placeholder: '20文字まで', class: "input-default"
         - if @product.errors.include?(:name)
           %p{style: "color: red;"}= @product.errors.full_messages_for(:name).first
         %br/
       .text-field.field
         %p 商品の説明
-        #{f.text_area :text, placeholder: '商品の説明（必須　1,000文字以内）', class: "input-default"}
+        = f.text_area :text, placeholder: '商品の説明（必須　1,000文字以内）', class: "input-default"
         - if @product.errors.include?(:text)
           %p{style: "color: red;"}= @product.errors.full_messages_for(:text).first
         %br/
       .product-datas
         %p.info
-          商品の詳細　
+          %hr/
+          商品の詳細
           .info__category.field
             %p カテゴリー
             #{f.text_field :category_id, placeholder: '必須', class: "input-default"}
@@ -58,6 +60,7 @@
               %p{style: "color: red;"}= @product.errors.full_messages_for(:condition).first
             %br/
         %p.shipping
+          %hr/
           発送について　
           .shipping__postage.field   
             %p 配送料の負担
@@ -78,6 +81,7 @@
               %p{style: "color: red;"}= @product.errors.full_messages_for(:days).first
             %br/
         %p.price
+          %hr/
           %p 価格（￥300〜￥100,000）
           .price__date.field
             %p 販売価格
