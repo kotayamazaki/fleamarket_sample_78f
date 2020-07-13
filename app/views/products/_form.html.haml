@@ -1,5 +1,7 @@
 
 %section.Exhibition
+  =link_to root_path do
+    = image_tag "logo.png", size: "185x49", alt: "フリマのアイコン",class: "Exhibition__logo"
   .Exhibition__form
     = form_with(model: @product, local: true) do |f|
       - if @product.errors.any?
@@ -59,7 +61,7 @@
           発送について　
           .shipping__postage.field   
             %p 配送料の負担
-            = f.select :postage, {'送料込み(あなたが負担)': 1, '着払い(購入者が負担)': 2}, { include_blank: '選択してください'}, { class: "input-default" , required: true }
+            = f.select :postage, {'送料込み(あなたが負担)': '送料込み(あなたが負担)', '着払い(購入者が負担)': '着払い(購入者が負担)'}, { include_blank: '選択してください'}, { class: "input-default" , required: true }
             - if @product.errors.include?(:postage)
               %p{style: "color: red;"}= @product.errors.full_messages_for(:postage).first
             %br/
