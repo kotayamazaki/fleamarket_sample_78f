@@ -1,0 +1,56 @@
+.Exhibition {
+  padding: 30px;
+  width: 80%;
+  margin: 100px auto;
+
+  &__logo {
+    display: block;
+    margin: 80px auto;
+    width: 350px;
+    height: 100px;
+  }
+
+  &__form {
+    font-size: 30px;
+    // background-color: #f5f5f5;
+    // background-color: #ffffff;
+    margin: 30px auto;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.product-datas {
+  // color: red;
+}
+
+.field {
+  background-color: #ffffff;
+  padding: 20px;
+  margin: 30px 0;
+}
+
+.input-default {
+  width: 600px;
+  height: 48px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+.Exhibitionーbutton {
+  width: 100%;
+  line-height: 48px;
+  font-size: 18px;
+  border-radius: 4px;
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  cursor: pointer;
+  // text-align: center;
+}
