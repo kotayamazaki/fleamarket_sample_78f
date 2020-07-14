@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :users, only: [:index, :edit, :update, :show, :destroy]
-  resources :products, only: [:index]
+  resources :products, expect: [:show]
   root 'products#index'
   resources :card, only: [:new, :destroy] do
     collection do

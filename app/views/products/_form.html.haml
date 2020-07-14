@@ -28,9 +28,8 @@
           .js-file_group{"data-index" => "#{@product.images.count}"}
             = file_field_tag :name, name: "product[images_attributes][#{@product.images.count}][name]", class: 'js-file'
             .js-remove 削除
-        - if @product.errors.include?(:name)
-          %p{style: "color: red;"}= @product.errors.full_messages_for(:name).first
       %hr/
+      
       .name-field.field
         .form-title
           %p.form-title__name 商品名
