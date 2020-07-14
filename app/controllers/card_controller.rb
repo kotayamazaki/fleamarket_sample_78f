@@ -1,6 +1,6 @@
 class CardController < ApplicationController
   require "payjp"
-  before_action :set_card, only: [:delete, :show]
+  before_action :set_card, only: [:delete, :mypage]
 
   def new
     redirect_to action: "mypage" if Card.exists?(user_id: current_user.id)
