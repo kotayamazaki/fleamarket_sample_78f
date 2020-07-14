@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root 'items#index'
   resources :card, only: [:new, :destroy] do
     collection do
-      get 'show', to: 'card#show'
+      get 'mypage', to: 'card#mypage'
       post 'pay', to: 'card#pay'
       post 'delete', to: 'card#delete' 
     end
