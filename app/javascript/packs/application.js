@@ -9,7 +9,8 @@ require("@rails/activestorage").start();
 require("channels");
 require("jquery");
 require("../products");
-require("../category");
+require("../categories");
+require("../nav-list");
 
 //= require turbolinks
 //= require jquery
