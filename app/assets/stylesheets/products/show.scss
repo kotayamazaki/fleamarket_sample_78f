@@ -1,0 +1,35 @@
+.main{
+  background: #f8f8f8;
+  &__content{
+    width: 700px;
+    margin: 0 auto;
+    &__top-content{
+      &__itembox{
+        background-color: #fff;
+        padding: 24px 40px 40px;
+        &__name{
+          text-align: center;
+        &__body{
+          margin: 16px 0 0;
+        }
+        &__price{
+          display: flex;
+          margin: 24px 0 24px;
+          text-align: center;
+          flex-direction: column;
+        }
+
+        // &__detail{
+        // }
+        
+      }
+    }
+  }
+}
+}
+
+.category{
+  margin-bottom: 20px;
+  background-color: red;
+  
+}

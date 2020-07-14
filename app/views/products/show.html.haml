@@ -1,0 +1,62 @@
+.main
+  .main__content
+    .main__content__top-content
+      .main__content__top-content__itembox
+        .main__content__top-content__itembox__name
+        %h2 商品名
+        .main__content__top-content__itembox__body
+        -# = img_tag ""
+        .main__content__top-content__itembox__price
+        -# .main__content__top-content__detail
+
+        %table{ width: "300"}  
+          %tr
+            %th.category カテゴリー  
+            %td やきそば
+          %tr
+            %th{nowrap: "nowrap"} ブランド  
+            %td やきそば
+          %tr
+            %th{nowrap: "nowrap"} サイズ  
+            %td やきそば
+          %tr
+            %th{nowrap: "nowrap"} 商品の状態 
+            %td やきそば
+          %tr
+            %th{nowrap: "nowrap"} 配送料の負担  
+            %td やきそば
+          %tr
+            %th{nowrap: "nowrap"} 発送元の地域  
+            %td やきそば
+          
+          -# %table{border: "1"}
+          -#   %thead
+          -#     %tr{valign: "top"}
+          -#       %th{height: "80", width: "100"} 
+          -#         %th{width: "100"}
+          -# %tbody
+          -#   %tr{valign: "top"}
+          -#     %td{height: "80", width: "100"} 
+          -#     %td{height: "80", width: "100"} 
+
+          -# %tfoot
+          -#   %tr{valign: "top"}
+          -#     %td{height: "80", width: "100"} 
+          -#     %td{height: "80", width: "100"} 
+
+          -# .main__content__top-content__itembox__table__Category
+          -#   カテゴリー
+          -# .main__content__top-content__itembox__table__Bland
+          -#   ブランド
+          -# .main__content__top-content__itembox__table__Size
+          -#   サイズ
+          -# .main__content__top-content__itembox__table__Status
+          -#   商品の状態
+          -# .main__content__top-content__itembox__table__Delivery
+          -#   配送料の負担
+          -# .main__content__top-content__itembox__table__Area
+          -#   発送元の地域
+          -# .main__content__top-content__itembox__table__Day
+          -#   発送日の目安
+
+  = render partial: 'layouts/footer'
