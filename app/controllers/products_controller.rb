@@ -47,6 +47,50 @@ class ProductsController < ApplicationController
       flash.now[:alert] = "削除できませんでした"
     end
   end
+  
+  def select_category_index
+    # カテゴリ名を取得するために@categoryにレコードをとってくる
+    @category = Category.find_by(id: params[:id])
+
+    # 親カテゴリーを選択していた場合の処理
+    if @category.ancestry == nil
+      # Categoryモデル内の親カテゴリーに紐づく孫カテゴリーのidを取得
+      category = Category.find_by(id: params[:id]).indirect_ids
+      # 孫カテゴリーに該当するproductsテーブルのレコードを入れるようの配列を用意
+      @products = []
+      # find_productメソッドで処理
+      find_product(category)
+
+    # 孫カテゴリーを選択していた場合の処理
+    elsif @category.ancestry.include?("/")
+      # Categoryモデル内の親カテゴリーに紐づく孫カテゴリーのidを取得
+      @products = Product.where(category_id: params[:id])
+
+    # 子カテゴリーを選択していた場合の処理
+    else
+      category = Category.find_by(id: params[:id]).child_ids
+      # 孫カテゴリーに該当するproductsテーブルのレコードを入れるようの配列を用意
+      @products = []
+      # find_productメソッドで処理
+      find_product(category)
+    end
+  end
+
+  def find_product(category)
+    category.each do |id|
+      product_array = Product.includes(:images).where(category_id: id)
+      # find_by()メソッドで該当のレコードがなかった場合、productオブジェクトに空の配列を入れないようにするための処理
+      if product_array.present?
+        product_array.each do |product|
+          if product.present?
+          else
+            # find_by()メソッドで該当のレコードが見つかった場合、@product配列オブジェクトにそのレコードを追加する
+            @products.push(product)
+          end
+        end
+      end
+    end
+  end
 
 private
   def product_params
