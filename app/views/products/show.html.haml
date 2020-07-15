@@ -5,58 +5,44 @@
         .main__content__top-content__itembox__name
         %h2 商品名
         .main__content__top-content__itembox__body
-        -# = img_tag ""
+          = image_tag "pict-reason-01.jpg", size:"400x400"
         .main__content__top-content__itembox__price
         -# .main__content__top-content__detail
 
-        %table{ width: "300"}  
-          %tr
-            %th.category カテゴリー  
-            %td やきそば
-          %tr
-            %th{nowrap: "nowrap"} ブランド  
-            %td やきそば
-          %tr
-            %th{nowrap: "nowrap"} サイズ  
-            %td やきそば
-          %tr
-            %th{nowrap: "nowrap"} 商品の状態 
-            %td やきそば
-          %tr
-            %th{nowrap: "nowrap"} 配送料の負担  
-            %td やきそば
-          %tr
-            %th{nowrap: "nowrap"} 発送元の地域  
-            %td やきそば
-          
-          -# %table{border: "1"}
-          -#   %thead
-          -#     %tr{valign: "top"}
-          -#       %th{height: "80", width: "100"} 
-          -#         %th{width: "100"}
-          -# %tbody
-          -#   %tr{valign: "top"}
-          -#     %td{height: "80", width: "100"} 
-          -#     %td{height: "80", width: "100"} 
+  %table.table{ width: "600", border: "1"}  
+    -# subcontentはモデルから引っ張ってくる
+    %tr
+      %th.category 出品者  
+      %td.subcontent YT
+    %tr
+      %th.category カテゴリー  
+      %td.subcontent 
+        メンズビジネスバッグ 
+        %br 
+        レディースバッグ
+    %tr
+      %th.category ブランド  
+      %td.subcontent 
+        ポーター
+    %tr
+      %th.category サイズ  
+      %td.subcontent
+        M
+    %tr
+      %th.category 商品の状態 
+      %td.subcontent 
+        新品/未使用
+    %tr
+      %th.category 配送料の負担  
+      %td.subcontent 
+        送料込み（出品者負担）
+    %tr
+      %th.category 発送元の地域  
+      %td.subcontent 
+        北海道
+    %tr
+      %th.category 発送日の目安 
+      %td.subcontent
+        1-2日で発送
 
-          -# %tfoot
-          -#   %tr{valign: "top"}
-          -#     %td{height: "80", width: "100"} 
-          -#     %td{height: "80", width: "100"} 
-
-          -# .main__content__top-content__itembox__table__Category
-          -#   カテゴリー
-          -# .main__content__top-content__itembox__table__Bland
-          -#   ブランド
-          -# .main__content__top-content__itembox__table__Size
-          -#   サイズ
-          -# .main__content__top-content__itembox__table__Status
-          -#   商品の状態
-          -# .main__content__top-content__itembox__table__Delivery
-          -#   配送料の負担
-          -# .main__content__top-content__itembox__table__Area
-          -#   発送元の地域
-          -# .main__content__top-content__itembox__table__Day
-          -#   発送日の目安
-
-  = render partial: 'layouts/footer'
+= render partial: 'layouts/footer'

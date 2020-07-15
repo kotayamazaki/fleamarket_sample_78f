@@ -1,5 +1,6 @@
 .main{
   background: #f8f8f8;
+  margin: 20px 0;
   &__content{
     width: 700px;
     margin: 0 auto;
@@ -7,10 +8,13 @@
       &__itembox{
         background-color: #fff;
         padding: 24px 40px 40px;
+
         &__name{
           text-align: center;
         &__body{
           margin: 16px 0 0;
+          
+        
         }
         &__price{
           display: flex;
@@ -18,18 +22,24 @@
           text-align: center;
           flex-direction: column;
         }
-
-        // &__detail{
-        // }
-        
       }
     }
   }
 }
 }
-
-.category{
-  margin-bottom: 20px;
-  background-color: red;
-  
+.table{
+  border: solid 1px #dcdcdc;
+  font-size: 14px;
+  .subcontent{
+    box-sizing: border-box;
+    padding: 10px;
+    display: table-cell;
+  }
+  .category{
+    margin-bottom: 20px;
+    height: 40px;
+    width: 150px;
+    text-align: center;
+    background-color: #eee;
+  }
 }
