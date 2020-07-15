@@ -49,6 +49,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @products = Product.includes(:images, :users)
   end
 
 private

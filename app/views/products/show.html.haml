@@ -53,6 +53,12 @@
         %th.category 発送日の目安 
         %td.subcontent
           1-2日で発送
+  .user-in
+    - if user_signed_in? && current_user.id == product.seller_id
+      = link_to '編集', edit_product_path
+      = link_to '削除', product_path, method: :delete
+
+
 
 .appBanner
   .inner
