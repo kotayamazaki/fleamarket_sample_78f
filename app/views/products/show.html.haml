@@ -1,0 +1,67 @@
+= render partial: 'layouts/header'
+.main
+  .main__content
+    .main__content__top-content
+      .main__content__top-content__itembox
+        .main__content__top-content__itembox__name
+          %h2.product-name 商品名
+        .main__content__top-content__itembox__body
+          = image_tag "pict-reason-01.jpg", size:"400x400"
+          .main__content__top-content__itembox__body--sub
+            = image_tag "pict-reason-01.jpg", size:"100x100", class:"image"  
+            = image_tag "pict-reason-01.jpg", size:"100x100", class:"image"
+           
+        .main__content__top-content__itembox__price
+          %h3.product-price ¥1000
+          .main__content__top-content__itembox__detail
+            (税込)送料込み
+        .main__content__top-content__itembox__Explanation
+          出品用テキスト ここに説明が入ります。出品用テキスト ここに説明が入ります。出品用テキスト ここに説明が入ります。
+  .table
+    %table.table__content{ width: "600"}  
+      -# subcontentはモデルから引っ張ってくる
+      %tr
+        %th.category 出品者  
+        %td.subcontent YT
+      %tr
+        %th.category カテゴリー  
+        %td.subcontent 
+          メンズビジネスバッグ 
+          %br 
+          レディースバッグ
+      %tr
+        %th.category ブランド  
+        %td.subcontent 
+          ポーター
+      %tr
+        %th.category サイズ  
+        %td.subcontent
+          M
+      %tr
+        %th.category 商品の状態 
+        %td.subcontent 
+          新品/未使用
+      %tr
+        %th.category 配送料の負担  
+        %td.subcontent 
+          送料込み（出品者負担）
+      %tr
+        %th.category 発送元の地域  
+        %td.subcontent 
+          北海道
+      %tr
+        %th.category 発送日の目安 
+        %td.subcontent
+          1-2日で発送
+
+.appBanner
+  .inner
+    .inner__title
+      %h2 だれでもかんたん、人生を変えるフリマアプリ
+    .inner__text
+      %p 今すぐ無料ダウンロード！
+    .inner__icon
+      %a.gBtn 
+        = image_tag "google-play-badge.png" ,size: "200x90"
+
+= render partial: 'layouts/footer'

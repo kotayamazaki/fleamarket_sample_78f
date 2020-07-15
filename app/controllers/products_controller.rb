@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, except: [:index, :new, :create]
+  before_action :set_product, except: [:index, :new, :create, :show]
 
   def index
     @products = Product.includes(:images).order('created_at DESC')
@@ -46,6 +46,9 @@ class ProductsController < ApplicationController
       render :index
       flash.now[:alert] = "削除できませんでした"
     end
+  end
+
+  def show
   end
 
 private

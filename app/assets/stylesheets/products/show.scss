@@ -1,0 +1,115 @@
+.main{
+  background: #fff;
+  margin: 20px 0;
+  &__content{
+    width: 700px;
+    margin: 0 auto;
+    &__top-content{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &__itembox{
+        background-color: #fff;
+        padding: 24px 40px 40px;
+        width: 600px;
+        &__name{
+          .product-name{
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+          }
+        }
+        &__body{
+          margin: 16px 0 0;
+          text-align: center;
+          &--sub{
+            display: flex;
+            justify-content: center;
+            margin: 10px 0 ;
+
+          }
+          .image{
+            padding: 5px;
+          }
+        }
+        &__price{
+          display: flex;
+          margin: 24px 0 24px;
+          text-align: center;
+          flex-direction: column;
+          .product-price{
+            font-size: 46px;
+            font-weight: bold;
+          }
+        }
+        &__Explanation{
+          line-height: 1.5;
+          font-size: 18px;
+          margin-bottom: 30px;
+          box-sizing: border-box;
+        }
+      }
+    }
+  }
+}
+.table{
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  .subcontent{
+    border: solid 1px #dcdcdc;
+    box-sizing: border-box;
+    padding: 10px;
+    display: table-cell;
+  }
+  .category{
+    border: solid 1px #dcdcdc;
+    margin-bottom: 20px;
+    height: 40px;
+    width: 150px;
+    text-align: center;
+    background-color: #eee;
+  }
+}
+
+.appBanner {
+  background-image: url("bg-appBanner-pict.png");
+  width: 100vw;
+  position: relative;
+  padding: 100px 40px;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+
+  .inner {
+    color: #fff;
+    text-align: center;
+
+    &__title {
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 1.4;
+    }
+
+    &__text {
+      font-size: 35px;
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+      ;
+    }
+
+    &__icon {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin: 20px auto 0;
+    }
+
+    .gBtn {
+      width: 180px;
+    }
+  }
+}
+
+
