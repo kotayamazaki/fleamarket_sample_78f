@@ -11,7 +11,7 @@
       &__itembox{
         background-color: #fff;
         padding: 24px 40px 40px;
-        
+        width: 600px;
         &__name{
           .product-name{
             text-align: center;
@@ -21,6 +21,7 @@
         }
         &__body{
           margin: 16px 0 0;
+          text-align: center;
           &--sub{
             display: flex;
             justify-content: center;
@@ -40,6 +41,12 @@
             font-size: 46px;
             font-weight: bold;
           }
+        }
+        &__Explanation{
+          line-height: 1.5;
+          font-size: 18px;
+          margin-bottom: 30px;
+          box-sizing: border-box;
         }
       }
     }
