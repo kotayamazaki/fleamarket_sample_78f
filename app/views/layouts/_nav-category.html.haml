@@ -3,6 +3,7 @@
   - @parents.each do |parent|
     %li.parent__list
       %a.list--name{href: ""}
+        -# = link_to "#{parent.name}",products_path(parent.id)
         = parent.name         
         %ul.level2
           - parent.children.each do |child|

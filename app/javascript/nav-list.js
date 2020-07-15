@@ -7,7 +7,7 @@ $(function () {
   $(".header__contents__below__search__category li ul").hide();
   $(".header__contents__below__search__category li").hover(
     function () {
-      $(">ul:not(:animated)", this).stop(true, true).show("fast");
+      $(">ul:not(:animated)", this).stop(true, true).slideDown("fast");
       $(">a", this).addClass("active");
     },
     function () {
