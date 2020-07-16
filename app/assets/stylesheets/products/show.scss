@@ -73,6 +73,21 @@
   }
 }
 
+.user-in{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+  .btn-btn-default{
+    width: 600px;
+    text-decoration: none;
+    display: block;
+    background: red;
+    color: #fff;
+    text-align: center;
+    font-weight: 600px;
+  }
+}
+
 .appBanner {
   background-image: url("bg-appBanner-pict.png");
   width: 100vw;
