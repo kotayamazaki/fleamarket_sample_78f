@@ -1,333 +1,358 @@
 // // // @import "mixin";
 
-.header {
-  background-color: rgb(255, 255, 255);
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18);
-  position: relative;
-  z-index: 10;
+// .header {
 
-  &__contents {
-    width: 1020px;
-    margin: 0px auto;
-    padding: 8px 0px 0px;
+//   // background-color: rgb(255, 255, 255);
+//   // box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18);
+//   // position: relative;
+//   // z-index: 10;
+//   &__contents {
+//     // width: 1020px;
+//     // margin: 0px auto;
+//     // padding: 8px 0px 0px;
 
-    &__top {
-      display: flex;
-      -webkit-box-pack: justify;
-      justify-content: space-between;
+//     &__top {
+//       // display: flex;
+//       // -webkit-box-pack: justify;
+//       // justify-content: space-between;
 
-      &__form {
-        position: relative;
-        width: 100%;
-      }
-    }
-
-    &__below {
-      display: flex;
-      -webkit-box-pack: justify;
-      justify-content: space-between;
-      margin-top: 8px;
-
-      &__search {
-
-        margin-left: -3px;
-        height: 44px;
-        line-height: 44px;
-
-        &__category {
-          cursor: pointer;
-          position: relative;
-          padding-right: 10px;
-          transition: all 0.3s ease-out 0s;
-
-
-          &:hover .search__category {
-            color: rgb(41, 129, 180);
-          }
-
-
-          // プルダウンメニュー（カテゴリ）
-          >ul.level1 {
-            position: absolute;
-            z-index: 20;
-            width: 250px;
-            margin: 0 auto;
-
-            >li {
-              font-size: 12px;
-              width: 250px;
-              flex: 1;
-
-              &:not(:last-child) {
-                margin-right: 5px;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-.menu {
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-}
-
-.list--name {
-  padding: 0 15px 0 15px;
-  background: White;
-  line-height: 4.5;
-  color: black;
-  text-decoration: none;
-  display: block;
-  transition: 0.1s;
-
-  &:hover {
-    text-decoration: none;
-  }
-}
-
-.level1,
-.level2 {
-  display: none;
-  width: 250px;
-  border-right: 1px solid rgb(204, 204, 204);
-  border-bottom: 1px solid rgb(204, 204, 204);
-  border-left: 1px solid rgb(204, 204, 204);
-  // z-index: 9;
-  // position: absolute;
-
-
-  // .parent__list {
-  //   padding: 0 15px 0 15px;
-  //   background: White;
-  //   line-height: 4.5;
-
-  .list--name {
-    padding: 0 15px 0 15px;
-    background: White;
-    line-height: 4.5;
-  }
-}
-
-// }
-
-.level1 {
-  position: relative;
-  // display: none;
-  top: 100%;
-  left: 0;
-
-  .active {
-    color: lighten(black, 95%);
-    background: red;
-  }
-}
-
-.level2 {
-  position: absolute;
-  top: 0;
-  right: 0px;
-  left: 100%;
-  height: 703px;
-  background: White;
-
-
-  .active {
-    color: black;
-    background: gray;
-  }
-
-  .list--name {
-    line-height: 2.0;
-  }
-}
-
-
-// NOTE: あとで実装予定
-
-//       &__registration{
-//         display: flex;
-//         &__new{
-//           text-align: center;
-//           @include button;
-//           margin-right:10px;
-//         }
-//         &__login{
-//           text-align: center;
-//           @include button;
-//           width:76.75px;
-//         }
+//       &__form {
+//         // position: relative;
+//         // width: 100%;
 //       }
-//       &__personal{
-//         display: flex;
-//         position: relative;
-//         &__likes{
-//           // @include login-list;
-//           &:hover .likes{
-//             color:$link-blue;
-//           }
-//           &:hover .login__icon{
-//             color:$link-blue;
-//           }
-//         }
-//         &__notification{
-//           // @include login-list;
-//           &:hover .notification{
-//             color:$link-blue;
-//           }
-//           &:hover .login__icon{
-//             color:$link-blue;
-//           }
-//         }
-//         &__todo{
-//           // @include login-list;
-//           &:hover .todo{
-//             color:$link-blue;
-//           }
-//           &:hover .login__icon{
-//             color:$link-blue;
-//           }
-//         }
-//         &__mypage{
-//           // @include login-list;
-//           &:hover .mypage{
-//             color:$link-blue;
-//           }
-//           &:hover .login__icon{
-//             color:$link-blue;
+//     }
+
+//     &__below {
+//       // display: flex;
+//       // -webkit-box-pack: justify;
+//       // justify-content: space-between;
+//       // margin-top: 8px;
+
+//       &__search {
+
+//         // margin-left: -3px;
+//         // height: 44px;
+//         // line-height: 44px;
+//         &__category {
+          // cursor: pointer;
+          // position: relative;
+          // padding-right: 10px;
+          // transition: all 0.3s ease-out 0s;
+
+
+          // &:hover .search__category {
+          //   // color: rgb(41, 129, 180);
+          // }
+
+
+          // // プルダウンメニュー（カテゴリ）
+          // >ul.level1 {
+          //   // position: absolute;
+          //   // z-index: 20;
+          //   // width: 250px;
+          //   // margin: 0 auto;
+//           //   >li {
+//           //     // font-size: 12px;
+//               // width: 250px;
+//               // flex: 1;
+
+//               &:not(:last-child) {
+//                 // margin-right: 5px;
+//               }
+//             }
 //           }
 //         }
 //       }
 //     }
 //   }
+// // }// .menu {
+//   // width: 100%;
+//   // display: flex;
+//   // justify-content: space-around;
 // }
 
-// .form{
-//   background-color: rgb(245, 245, 245);
-//   font-size: 16px;
-//   height: 40px;
-//   line-height: 1.4em;
-//   position: relative;
-//   width: 1030px;
-//   -webkit-appearance: none;
-//   border-width: 1px;
-//   border-style: solid;
-//   border-color: rgb(204, 204, 204);
-//   border-image: initial;
-//   border-radius: 4px;
-//   outline: none;
-//   padding: 0px 50px 0px 10px;
-//   transition: all 0.3s ease-out 0s;
+// // .list--name {
+//   //   padding: 0 15px 0 15px;
+//   //   background: White;
+//   //   line-height: 4.5;
+//   //   color: black;
+//   //   text-decoration: none;
+//   //   display: block;
+//   //   transition: 0.1s;
+
+//   //   &:hover {
+//   //     text-decoration: none;
+//   //   }
+//   // }
+
+// // .level1,
+// // .level2 {
+// //   display: none;
+// //   width: 250px;
+// //   border-right: 1px solid rgb(204, 204, 204);
+// //   border-bottom: 1px solid rgb(204, 204, 204);
+// //   border-left: 1px solid rgb(204, 204, 204);
+// // z-index: 9;
+// // position: absolute;
+
+
+// // .parent__list {
+// //   padding: 0 15px 0 15px;
+// //   background: White;
+// //   line-height: 4.5;
+
+// //   .list--name {
+// //     padding: 0 15px 0 15px;
+// // background: White;
+// // line-height: 4.5;
+// //   }
+// // }
 // }
 
-// .search-buttom{
-//   background-color: transparent;
-//   cursor: pointer;
-//   height: 40px;
-//   position: absolute;
-//   right: 0px;
-//   top: 0px;
-//   width: 40px;
-//   -webkit-appearance: none;
-//   border-width: initial;
-//   border-style: none;
-//   border-color: initial;
-//   border-image: initial;
-//   border-radius: 0px 4px 4px 0px;
-//   padding: 0px;
-//   margin:10px;
-// }
-// .search-button{
-//   display: none;
-// }
-// .fas.fa-search-minus{
-//   max-width: 100%;
-//   max-height: 100%;
-//   color: rgb(34, 34, 34);
-//   height: 14px;
-//   margin: 10px 10px;
-//   width: 14px;
-// }
+// .level1 {
+  //   position: relative;
+  //   // display: none;
+  //   top: 100%;
+  //   left: 0;
+
+  //   .active {
+  //     color: lighten(black, 95%);
+  //     background: red;
+  //   }
+  // }
+
+  // .level2 {
+  //   position: absolute;
+  //   top: 0;
+  //   right: 0px;
+  //   left: 100%;
+  //   height: 703px;
+  //   background: White;
 
 
-// .icon{
-//   max-width: 100%;
-//   max-height: 100%;
-//   height: 12px;
-//   margin-right: 4px;
-//   color:#ea352d;
-//   line-height: 44px;
-// }
+  //   .active {
+  //     color: black;
+  //     background: gray;
+  //   }
 
-// .login__icon{
-//   max-width: 100%;
-//   max-height: 100%;
-//   height: 12px;
-//   margin-right: 4px;
-//   color:rgb(134, 127, 127);
+  //   .list--name {
+  //     line-height: 2.0;
+  //   }
+  // }
 
-// }
+// //         &__brand{
+// //           // @include button;
+// //           padding-left:10px;
+// //           transition: all 0.3s ease-out 0s;
+// //           &:hover .search__brands{
+// //             color:$link-blue;
+// //           }
 
-.search__category {
-  // @include header-item;
-  font-weight: 600;
-  line-height: 44px;
-  margin-left: 4px;
-}
+// //           // プルダウンメニュー（ブランド）
+// //           ul.level1--category {
+// //             @include nav-ul;
+// //             display: none;
+// //             .active {
+// //               @include nav-level--active;
+// //             }
+// //             li.parent__list--category {
+// //               @include nav-li;
+// //             }
+// //           }
+// //           .list__name--category {
+// //             @include nav-li--name;
+// //           }
+// //           .level1--category {
+// //             @include nav-level--common;
+// //             top: 100%;
+// //             left: 0;
+// //             .list__name--category {
+// //               @include nav-list--name;
+// //             }
+// //           }
+// //         }
+// //       }
 
-// .search__brands{
+// //       &__registration{
+// //         display: flex;
+// //         &__new{
+// //           text-align: center;
+// //           @include button;
+// //           margin-right:10px;
+// //         }
+// //         &__login{
+// //           text-align: center;
+// //           @include button;
+// //           width:76.75px;
+// //         }
+// //       }
+// //       &__personal{
+// //         display: flex;
+// //         position: relative;
+// //         &__likes{
+// //           // @include login-list;
+// //           &:hover .likes{
+// //             color:$link-blue;
+// //           }
+// //           &:hover .login__icon{
+// //             color:$link-blue;
+// //           }
+// //         }
+// //         &__notification{
+// //           // @include login-list;
+// //           &:hover .notification{
+// //             color:$link-blue;
+// //           }
+// //           &:hover .login__icon{
+// //             color:$link-blue;
+// //           }
+// //         }
+// //         &__todo{
+// //           // @include login-list;
+// //           &:hover .todo{
+// //             color:$link-blue;
+// //           }
+// //           &:hover .login__icon{
+// //             color:$link-blue;
+// //           }
+// //         }
+// //         &__mypage{
+// //           // @include login-list;
+// //           &:hover .mypage{
+// //             color:$link-blue;
+// //           }
+// //           &:hover .login__icon{
+// //             color:$link-blue;
+// //           }
+// //         }
+// //       }
+// //     }
+// //   }
+// // }
+
+// // .form{
+// //   background-color: rgb(245, 245, 245);
+// //   font-size: 16px;
+// //   height: 40px;
+// //   line-height: 1.4em;
+// //   position: relative;
+// //   width: 1030px;
+// //   -webkit-appearance: none;
+// //   border-width: 1px;
+// //   border-style: solid;
+// //   border-color: rgb(204, 204, 204);
+// //   border-image: initial;
+// //   border-radius: 4px;
+// //   outline: none;
+// //   padding: 0px 50px 0px 10px;
+// //   transition: all 0.3s ease-out 0s;
+// // }
+
+// // .search-buttom{
+// //   background-color: transparent;
+// //   cursor: pointer;
+// //   height: 40px;
+// //   position: absolute;
+// //   right: 0px;
+// //   top: 0px;
+// //   width: 40px;
+// //   -webkit-appearance: none;
+// //   border-width: initial;
+// //   border-style: none;
+// //   border-color: initial;
+// //   border-image: initial;
+// //   border-radius: 0px 4px 4px 0px;
+// //   padding: 0px;
+// //   margin:10px;
+// // }
+// // .search-button{
+// //   display: none;
+// // }
+// // .fas.fa-search-minus{
+// //   max-width: 100%;
+// //   max-height: 100%;
+// //   color: rgb(34, 34, 34);
+// //   height: 14px;
+// //   margin: 10px 10px;
+// //   width: 14px;
+// // }
+
+
+// // .icon{
+// //   max-width: 100%;
+// //   max-height: 100%;
+// //   height: 12px;
+// //   margin-right: 4px;
+// //   color:#ea352d;
+// //   line-height: 44px;
+// // }
+
+// // .login__icon{
+// //   max-width: 100%;
+// //   max-height: 100%;
+// //   height: 12px;
+// //   margin-right: 4px;
+// //   color:rgb(134, 127, 127);
+
+// // }
+
+// .search__category {
 //   // @include header-item;
 //   font-weight: 600;
+//   line-height: 44px;
+//   margin-left: 4px;
 // }
 
-// .registration{
-//   background-color:$header-menu-red;
-//   color:$White;
-//   display: block;
-//   font-size: 14px;
-//   border-width: 1px;
-//   border-style: solid;
-//   border-color:$header-menu-red;
-//   line-height: 14px;
-//   border-radius: 4px;
-//   padding: 8px 10px;
-//   text-decoration: none;
-// }
+// // .search__brands{
+// //   // @include header-item;
+// //   font-weight: 600;
+// // }
 
-// .login{
-//   background-color:$White;
-//   color: $Blue;
-//   display: block;
-//   font-size: 14px;
-//   border-width: 1px;
-//   border-style: solid;
-//   border-color: $Blue;
-//   line-height: 14px;
-//   border-radius: 4px;
-//   padding: 8px 10px;
-//   transition: all 0.3s ease-out 0s;
-//   text-decoration: none;
-//   &:hover{
-//     background-color:$link-blue;
-//     color:$White;
-//   }
-// }
+// // .registration{
+// //   background-color:$header-menu-red;
+// //   color:$White;
+// //   display: block;
+// //   font-size: 14px;
+// //   border-width: 1px;
+// //   border-style: solid;
+// //   border-color:$header-menu-red;
+// //   line-height: 14px;
+// //   border-radius: 4px;
+// //   padding: 8px 10px;
+// //   text-decoration: none;
+// // }
 
-// .likes{
-//   @include header-item;
-// }
+// // .login{
+// //   background-color:$White;
+// //   color: $Blue;
+// //   display: block;
+// //   font-size: 14px;
+// //   border-width: 1px;
+// //   border-style: solid;
+// //   border-color: $Blue;
+// //   line-height: 14px;
+// //   border-radius: 4px;
+// //   padding: 8px 10px;
+// //   transition: all 0.3s ease-out 0s;
+// //   text-decoration: none;
+// //   &:hover{
+// //     background-color:$link-blue;
+// //     color:$White;
+// //   }
+// // }
 
-// .notification{
-//   @include header-item;
-// }
+// // // .likes{
+// // //   @include header-item;
+// // // }
 
-// .todo{
-//   @include header-item;
-// }
+// // // .notification{
+// // //   @include header-item;
+// // // }
 
-// .mypage{
-//   @include header-item;  
-// }
+// // // .todo{
+// // //   @include header-item;
+// // // }
+
+// // // .mypage{
+// // //   @include header-item;  
+// // // }
