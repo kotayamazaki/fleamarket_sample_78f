@@ -15,9 +15,9 @@
             .my-page__main__side-box__contents__section__list__logout
               = link_to "ログアウト", destroy_user_session_path, method: :delete
             .my-page__main__side-box__contents__section__list__cledit-register
-              = link_to "クレジットカード登録", card_path, method: :get
+              = link_to "クレジットカード登録", new_card_path, method: :get
             .my-page__main__side-box__contents__section__list__cledit-edit
-              クレジットカード情報編集
+              = link_to "クレジットカード情報編集", mypage_card_index_path, method: :get
             .my-page__main__side-box__contents__section__list__Exhibition
               出品した商品
             .my-page__main__side-box__contents__section__list__Purchase

@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, except: [:index, :new, :create]
+  before_action :set_product, except: [:index, :new, :create, :show]
 
   def index
     @products = Product.includes(:images).order('created_at DESC')
@@ -92,6 +92,9 @@ class ProductsController < ApplicationController
     end
   end
 
+  def show
+  end
+
 private
   def product_params
     params.require(:product).permit(:name, 
@@ -103,7 +106,9 @@ private
                                     :area, 
                                     :price,
                                     images_attributes:[:name, :_destroy, :id]
+                                    # productテーブルにデータを保存する際に、imageテーブルに一緒に保存する為に”images_attributes:”のように記述してどのカラムに入るか設定する。
                                     ).merge(seller_id: current_user.id)
+                                    # mergeでcurrent_user.idの方が出品をした際に、productテーブルにあるseller_id:カラムと出品物の外部キーでの連携ができる。
   end
 
   def set_product
