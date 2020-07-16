@@ -1,0 +1,35 @@
+-# - console
+%ul.level1
+  - @parents.each do |parent|
+    %li.parent__list
+      %a.list--name{href: ""}
+        -# = link_to "#{parent.name}",products_path(parent.id)
+        = parent.name         
+        %ul.level2
+          - parent.children.each do |child|
+            %li.child__list
+              %a.list--name{href: ""}
+                = child.name
+                %ul.level2
+                  - child.children.each do |grandchild|
+                    %li.grandchild__list
+                      %a.list--name{href: ""}
+                        = grandchild.name
+-# %ul.level1
+-#   - Category.roots.each do |parent|
+-#     %li.parent__list
+-#       %a.list--name{href: ""}
+-#         = parent.name         
+-# %ul.level2
+-#   - Category.roots.each do |parent|
+-#     - parent.children.each do |child|
+-#       %li.child__list
+-#         %a.list--name{href: ""}
+-#           = child.name
+-# %ul.level3
+-#   - Category.roots.each do |parent|
+-#     - parent.children.each do |child|
+-#       - child.children.each do |grandchild|
+-#         %li.grandchild__list
+-#           %a.list--name{href: ""}
+-#             = grandchild.name
