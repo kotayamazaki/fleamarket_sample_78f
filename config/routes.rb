@@ -2,10 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   root 'products#index'
   resources :users, only: [:index, :edit, :update, :show, :destroy]
-  post  'categories', to: 'products#select_category_index'
   resources :categories, only: [:index, :show]
-  resources :products
-  resources :users, only: [:index, :edit, :update, :show, :destroy]
+  post  'categories', to: 'products#select_category_index'
   resources :products do
     collection do
       get 'buy', to: 'products#buy'
