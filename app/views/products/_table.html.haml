@@ -1,16 +1,19 @@
 .product-lists
   - @products.each do |product|
     .product-list
-      = link_to "/products/#{product.id}", method: :get do
-        .product-list__name
-          = product.name
-        .product-list__price
-          = product.price
+      = link_to "/products/#{product.id}", class: "url-stile",method: :get do
 
         .product-list__img
-          - product.images.each do |image|
-            = image_tag image.name.url
-            -# 親モデルと子モデルの関係性として、子モデルには複数形での記述なる。保存先のカラム名を間違えないようにする。.urlとして記述する理由は分からないが、テーブルに保存する際に、URLで保存されるからか？
+          = image_tag product.images[0].name.url, size:"220x150", class:"head-image"
+
+        .product-list__body
+          .product-list__name
+            = product.name
+          .details
+            .details__price
+              = product.price 
+              %span 円
+            %p.tax-price (税込)
 
 
         -if product.buyer_id.present? 
