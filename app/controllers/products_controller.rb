@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   before_action :set_product, except: [:index, :new, :create, :buy]
 
   def index
-    @products = Product.includes(:images).order('created_at DESC')
+    @products = Product.includes(:images).limit(4).order('created_at DESC')
     # includesメソッドで記述する際には、親モデルに対して子モデルの命名は複数形で記述する。
     # orderメソッドはDESCで記述すると指定したカラムの新しい順で記述する事ができる。
   end

@@ -1,0 +1,32 @@
+.product-lists {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  .product-list {
+    height: 250px;
+    width: 220px;
+    .url-stile {
+      text-decoration: none;
+    }
+    &__img {
+      height: 150px;
+      width: 220px;
+      .head-image {
+        object-fit: cover;
+      }
+    }
+  &__body {
+    background-color: #fff;
+    color: #333;
+    width: 220px;
+    padding: 15px;
+    font-size: 16px;
+    box-sizing: border-box;
+    text-align: left;
+    .tax-price {
+      font-size: 10px;
+    }
+  }
+  }
+}
