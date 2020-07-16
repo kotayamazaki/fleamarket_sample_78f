@@ -74,4 +74,4 @@ gem 'dotenv-rails' #PAY.jpに必要
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'jquery-rails'
-gem 'ancestry'
+gem 'ancestry' #カテゴリ機能

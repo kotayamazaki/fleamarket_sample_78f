@@ -2,6 +2,7 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "header";
+@import "category";
 @import "products";
 @import "users";
 @import "buy";
@@ -11,3 +12,5 @@
 @import "sessions";
 @import "category";
 @import "products/show";
+@import "_shipping";
+

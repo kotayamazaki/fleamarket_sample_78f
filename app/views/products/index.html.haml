@@ -1,4 +1,5 @@
 = render partial: 'layouts/header'
+-# project://app/views/layouts/_header.html.haml
 
 .main
   .main_visual
@@ -105,6 +106,13 @@
       %p 今すぐ無料ダウンロード！
     .inner__icon
       %a.gBtn 
-        = image_tag "google-play-badge.png" ,size: "200x90"
-                      
+        = image_tag "google-play-badge.png" ,size: "200x90"                      
+
+= render partial: 'layouts/shipping'
+-# 「出品する」ボタン。
+-# project://app/views/layouts/_shipping.html.haml
+
 = render partial: 'layouts/footer'
+
+
+

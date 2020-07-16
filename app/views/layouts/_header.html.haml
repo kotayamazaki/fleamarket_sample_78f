@@ -1,35 +1,44 @@
 .header
-  .logo
-    =link_to root_path do
-      = image_tag "logo.png", size: "185x49", alt: "フリマのアイコン"
-  .search
-    = form_with(local: true, method: :get, class: "search-form") do |f|
-      = f.text_field :keyword, placeholder: "何かお探しですか？", class: "search-input"
-      %button{type: "submit", class:'btn'}
-        %i.fas.fa-search
-  .menu
-    .header__contents__below__search__category
-      %span.fas.fa-list-ul.icon
-      =link_to "カテゴリーから探す", categories_path, class:"search__category"
-      = render partial: "layouts/nav-category", parent: @parents
-      //project://app/views/layouts/_nav-category.html.haml
-    - if user_signed_in?
-      / ユーザーがログインしているか調べる
-      / ユーザーがログインしていた時の処理
-      %h2
-        現在 #{current_user.nickname} さんがログインしています
-      / ここを追加します
-      %h4
-        メールアドレス： #{current_user.email}
-      = link_to "ログアウト", destroy_user_session_path, method: :delete
-      / ログアウトをする
-    - else
-      / ユーザーがログインしていなかった時の処理
-      %h2 現在ログインしていません
-      = link_to "ログイン", new_user_session_path, class: 'post'
-      / ログイン画面に移行する
-      = link_to "新規登録", new_user_registration_path, class: 'post'
-      / 新規登録画面に移行する
+  .header__contents
+    .header__contents__top
+      .header__contents__top__logo
+        =link_to root_path do
+          = image_tag "logo.png", size: "185x49", alt: "フリマのアイコン", class: 'furima-logo'
+      .header__contents__top__form
+        = form_with(local: true, method: :get, class: "search-form") do |f|
+          = f.text_field :keyword, placeholder: "何かお探しですか？", class: "search-input"
+          %button{type: "submit", class:'btn'}
+            %i.fas.fa-search
+    .header__contents__below
+      .header__contents__below__search
+        .header__contents__below__search__category
+          %span.fas.fa-list-ul.icon
+          =link_to "カテゴリーから探す", categories_path, class:"search__category post"
+          = render partial: "layouts/nav-category", parent: @parents
+          //project://app/views/layouts/_nav-category.html.haml
 
--# = link_to '出品', new_product_path
-%br/
+      - if user_signed_in?
+        / ユーザーがログインしているか調べる
+
+        .header__contents__below__personal
+          / ユーザーがログインしていた時の処理
+          .header__contents__below__personal__mypage
+            %span.fas.fa-user-circle.login__icon
+            =link_to "#{current_user.nickname}さん", user_path(current_user.id),class:"mypage post"
+          .header__contents__below__personal__logout
+            
+            = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'post'
+            / ログアウトをする
+      - else
+      
+        .header__contents__below__registration
+          / ユーザーがログインしていなかった時の処理
+          .header__contents__below__registration__new
+            = link_to "新規登録", new_user_registration_path, class: 'post'
+            / 新規登録画面に移行する
+          .header__contents__below__registration__login
+            = link_to "ログイン", new_user_session_path, class: 'post'
+            / ログイン画面に移行する
+
+  -# = link_to '出品', new_product_path
+-# %br/
