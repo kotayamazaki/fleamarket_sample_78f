@@ -50,11 +50,9 @@
     - if user_signed_in? && current_user.id == @product.seller_id
       = link_to '編集', edit_product_path
       = link_to '削除', product_path, method: :delete
-  
-  - if @product.seller_id.present?
-    %input{type: "submit", class:'Confirmation-box__btn', value:'購入する'} 
-  -# -else
-  -#   = link_to '購入', buy_products_path
+    - else
+      = link_to '購入', buy_products_path, class: 'btn btn-default'
+      -# %input{type: "submit", class:'Confirmation-box__btn', value:'購入する'} 
 
 .appBanner
   .inner
