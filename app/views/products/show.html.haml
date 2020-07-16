@@ -22,37 +22,37 @@
       -# subcontentはモデルから引っ張ってくる
       %tr
         %th.category 出品者  
-        %td.subcontent YT
+        %td.subcontent 
+          = @product.seller_id
       %tr
         %th.category カテゴリー  
         %td.subcontent 
-          メンズビジネスバッグ 
+          = @product.category_id
           %br 
-          レディースバッグ
-      %tr
-        %th.category ブランド  
-        %td.subcontent 
-          ポーター
-      %tr
-        %th.category サイズ  
-        %td.subcontent
-          M
+          = @product.category_id
       %tr
         %th.category 商品の状態 
         %td.subcontent 
-          新品/未使用
+          = @product.condition
       %tr
         %th.category 配送料の負担  
         %td.subcontent 
-          送料込み（出品者負担）
+          = @product.postage
       %tr
         %th.category 発送元の地域  
         %td.subcontent 
-          北海道
+          = @product.area
       %tr
         %th.category 発送日の目安 
         %td.subcontent
-          1-2日で発送
+          = @product.days
+  .user-in
+    - if user_signed_in? && current_user.id == @product.seller_id
+      = link_to '編集', edit_product_path
+      = link_to '削除', product_path, method: :delete
+    - else
+      = link_to '購入', buy_products_path, class: 'btn btn-default'
+      -# %input{type: "submit", class:'Confirmation-box__btn', value:'購入する'} 
 
 .appBanner
   .inner
