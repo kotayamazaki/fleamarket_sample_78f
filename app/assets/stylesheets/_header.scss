@@ -171,7 +171,7 @@
       &__personal {
         display: flex;
         // color: #000000;
-        font-size: 20px;
+        font-size: 10px;
 
         &__mypage {
           margin-right: 15px;
@@ -180,20 +180,17 @@
             // content: "";
             font-size: 25px;
           }
-
-          &__logout {
-          }
         }
 
-        // ログアウト中
-        &__registration {
-          display: flex;
-
-          font-size: 20px;
-
-          &__new {
-            margin-right: 15px;
-          }
+        &__logout {
+        }
+      }
+      // ログアウト中
+      &__registration {
+        display: flex;
+        font-size: 20px;
+        &__new {
+          margin-right: 15px;
         }
       }
     }
