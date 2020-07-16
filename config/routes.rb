@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :users, only: [:index, :edit, :update, :show, :destroy]
+  post  'categories', to: 'products#select_category_index'
+  resources :categories, only: [:index, :show]
   resources :products
   root 'products#index'
   resources :card, only: [:new, :destroy] do
@@ -9,6 +11,5 @@ Rails.application.routes.draw do
       post 'pay', to: 'card#pay'
       post 'delete', to: 'card#delete' 
     end
-    # ↑今後使用することがなくなったときに削除する。(collection doから)
   end
 end

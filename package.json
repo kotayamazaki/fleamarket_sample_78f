@@ -1,5 +1,6 @@
 {
   "name": "fleamarket_sample_78f",
+  "license": "UNLICENSED",
   "private": true,
   "dependencies": {
     "@rails/actioncable": "^6.0.0-alpha",
