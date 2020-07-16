@@ -12,7 +12,7 @@
               = f.label :アドレス
               .field__address__required 必須
               %br/
-              = f.email_field :email, autofocus: true, autocomplete: "email"
+              = f.email_field :email, autofocus: true, autocomplete: "email", class: "address"
             .field__password
               = f.label :パスワード
               - if @minimum_password_length
@@ -20,42 +20,42 @@
                 -#   (#{@minimum_password_length} characters minimum)
                 .field__password__required 必須
               %br/
-              = f.password_field :password, autocomplete: "new-password"
+              = f.password_field :password, autocomplete: "new-password", class: "new-password", placeholder:'8文字以上'
             .field__password_confirmation
               = f.label :パスワード（再入力）
               .field__password_confirmation__required 必須
               %br/
-              = f.password_field :password_confirmation, autocomplete: "new-password"
-            .field__famiry_kana
+              = f.password_field :password_confirmation, autocomplete: "new-password", class: "password", placeholder:'8文字以上'
+            .field__family_kana
               = f.label :姓（カナ）
-              .field__famiry_kana__required 必須
+              .field__family_kana__required 必須
               %br/
-              = f.text_field :family_kana, autocomplete: "family_kana"
+              = f.text_field :family_kana, autocomplete: "family_kana", class: "family-kana"
             .field__family_name
               = f.label :姓
               .field__family_name__required 必須
               %br/
-              = f.text_field :family_name, autocomplete: "family_name"
+              = f.text_field :family_name, autocomplete: "family_name", class: "family-name"
             .field__first_kana
               = f.label :名（カナ）
               .field__first_kana__required 必須
               %br/
-              = f.text_field :first_kana, autocomplete: "first_kana"
+              = f.text_field :first_kana, autocomplete: "first_kana", class: "first-kana"
             .field__first_name
               = f.label :名
               .field__first_name__required 必須
               %br/
-              = f.text_field :first_name, autocomplete: "first_name"
+              = f.text_field :first_name, autocomplete: "first_name", class: "first-name"
             .field__nickname
               = f.label :ニックネーム
               .field__nickname__required 必須
               %br/
-              = f.text_field :nickname, autocomplete: "nickname"
+              = f.text_field :nickname, autocomplete: "nickname", class: "nickname"
             .field__birthday
               = f.label :誕生日
               .field__birthday__required 必須
               %br/
-              = f.text_field :birthday, autocomplete: "birthday"
+              = f.text_field :birthday, autocomplete: "birthday", class: "birthday", placeholder:'（例）1990/02/02'
       .actions
         = f.submit "登録する"
     = render "devise/shared/links"

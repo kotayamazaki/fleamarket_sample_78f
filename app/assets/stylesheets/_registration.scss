@@ -27,7 +27,6 @@ body {
       }
       .registration{
         width: 500px;
-        height: 400px;
         background-color: #fff;
       }
       .field{
@@ -37,82 +36,118 @@ body {
           background: #ea352d;
           margin: 0 0 0 8px;
           padding: 2px 4px;
-          border-radius: 2px;
+          border-radius: 5px;
           color: #fff;
           font-size: 12px;
           display: inline-block;
+        }
+        .address{
+          width: 300px;
+          height: 20px;
         }
         &__password__required{
           background: #ea352d;
           margin: 0 0 0 8px;
           padding: 2px 4px;
-          border-radius: 2px;
+          border-radius: 5px;
           color: #fff;
           font-size: 12px;
           display: inline-block;
+        }
+        .new-password{
+          width: 300px;
+          height: 20px;
         }
         &__password_confirmation__required{
           background: #ea352d;
           margin: 0 0 0 8px;
           padding: 2px 4px;
-          border-radius: 2px;
+          border-radius: 5px;
           color: #fff;
           font-size: 12px;
           display: inline-block;
         }
-        &__famiry_kana__required{
+        .password{
+          width: 300px;
+          height: 20px;
+        }
+        &__family_kana__required{
           background: #ea352d;
           margin: 0 0 0 8px;
           padding: 2px 4px;
-          border-radius: 2px;
+          border-radius: 5px;
           color: #fff;
           font-size: 12px;
           display: inline-block;
+        }
+        .family-kana{
+          width: 300px;
+          height: 20px;
         }
         &__family_name__required{
           background: #ea352d;
           margin: 0 0 0 8px;
           padding: 2px 4px;
-          border-radius: 2px;
+          border-radius: 5px;
           color: #fff;
           font-size: 12px;
           display: inline-block;
+        }
+        .family-name{
+          width: 300px;
+          height: 20px;
         }
         &__first_kana__required {
           background: #ea352d;
           margin: 0 0 0 8px;
           padding: 2px 4px;
-          border-radius: 2px;
+          border-radius: 5px;
           color: #fff;
           font-size: 12px;
           display: inline-block;
+        }
+        .first-kana{
+          width: 300px;
+          height: 20px;
         }
         &__first_name__required{
           background: #ea352d;
           margin: 0 0 0 8px;
           padding: 2px 4px;
-          border-radius: 2px;
+          border-radius: 5px;
           color: #fff;
           font-size: 12px;
           display: inline-block;
+        }
+        .first-name{
+          width: 300px;
+          height: 20px;
         }
         &__nickname__required{
           background: #ea352d;
           margin: 0 0 0 8px;
           padding: 2px 4px;
-          border-radius: 2px;
+          border-radius: 5px;
           color: #fff;
           font-size: 12px;
           display: inline-block;
         }
+        .nickname{
+          width: 300px;
+          height: 20px;
+        }
         &__birthday__required{
           background: #ea352d;
-        margin: 0 0 0 8px;
-        padding: 2px 4px;
-        border-radius: 2px;
-        color: #fff;
-        font-size: 12px;
-        display: inline-block;
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+          border-radius: 5px;
+          color: #fff;
+          font-size: 12px;
+          display: inline-block;
+        }
+        .birthday{
+          width: 300px;
+          height: 20px;
         }
       }
     }
