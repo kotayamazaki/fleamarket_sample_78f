@@ -1,0 +1,20 @@
+.product-lists
+  - @products.each do |product|
+    .product-list
+      = link_to "/products/#{product.id}", class: "url-stile",method: :get do
+
+        .product-list__img
+          = image_tag product.images[0].name.url, size:"220x150", class:"head-image"
+
+        .product-list__body
+          .product-list__name
+            = product.name
+          .details
+            .details__price
+              = product.price 
+              %span 円
+            %p.tax-price (税込)
+
+
+        -if product.buyer_id.present? 
+          SOLD

@@ -83,7 +83,9 @@
   .pickupContainer
     .head
       %h2 商品一覧
-      = render @products
+      = render partial: 'products/table'
+      -# <%= render partial: 'product_body', locals: { product: @product } %>
+      -# <%= render partial: 'related_products', collection: @related_products %>
 
       .productBox
         .productHead
@@ -91,15 +93,11 @@
             %h3 新規投稿商品
         .productLists
           .productList
+          
             .productList--img
             .productList--body
               .name
-                -# %h3 ああ
-                  -#  .datails
-                  -#   %ul
-                  -#     %li 1000円
-                  -#       %i.fas.fa-starlikeIcon
-                  -#     %p (税込)
+         
 .appBanner
   .inner
     .inner__title

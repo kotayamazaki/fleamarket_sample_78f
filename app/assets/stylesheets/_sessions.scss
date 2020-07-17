@@ -27,12 +27,34 @@ body {
       }
       .sessions{
         width: 500px;
-        height: 150px;
         background-color: #fff;
       }
       .field{
         font-size: 10px;
         background-color: #ffff;
+        &__adress{
+          .email{
+            width: 200px;
+            height: 20px;
+          }
+        }
+        &__password{
+          .current-password{
+            width: 200px;
+            height: 20px;
+          }
+        }
+        &__password_confirmation{
+          .memory{
+            margin: 5px;
+          }
+        }
+        .actions{
+          .login{
+            width: 100px;
+            margin: 10px 0;
+          }
+        }
       }
     }
     .user_new_footer {
