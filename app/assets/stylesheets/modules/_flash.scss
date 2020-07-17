@@ -1,0 +1,15 @@
+.notifications{
+  width: 100%;
+ .flash {
+    color: white;
+    text-align: center;
+    width: 100%;
+    padding: 0px auto;
+    &__alert{
+      background-color: red;
+    }
+    &__notice {
+      background-color: #3CCACE;
+    }
+  }
+}
