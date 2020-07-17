@@ -97,6 +97,7 @@ class ProductsController < ApplicationController
 
   def buy
   end
+  
 
 private
   def product_params
