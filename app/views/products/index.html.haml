@@ -82,21 +82,10 @@
   
   .pickupContainer
     .head
-      %h2 商品一覧
+      %h2.head-title 商品一覧
       = render partial: 'products/table'
-      -# <%= render partial: 'product_body', locals: { product: @product } %>
-      -# <%= render partial: 'related_products', collection: @related_products %>
-
-      .productBox
-        .productHead
-          .title
-            %h3 新規投稿商品
-        .productLists
-          .productList
-          
-            .productList--img
-            .productList--body
-              .name
+      .title
+        %h3 新規投稿商品
          
 .appBanner
   .inner

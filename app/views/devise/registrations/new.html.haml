@@ -20,12 +20,12 @@
                 -#   (#{@minimum_password_length} characters minimum)
                 .field__password__required 必須
               %br/
-              = f.password_field :password, autocomplete: "new-password", class: "new-password", placeholder:'8文字以上'
+              = f.password_field :password, autocomplete: "new-password", class: "new-password", placeholder:'7文字以上'
             .field__password_confirmation
               = f.label :パスワード（再入力）
               .field__password_confirmation__required 必須
               %br/
-              = f.password_field :password_confirmation, autocomplete: "new-password", class: "password", placeholder:'8文字以上'
+              = f.password_field :password_confirmation, autocomplete: "new-password", class: "password", placeholder:'7文字以上'
             .field__family_kana
               = f.label :姓（カナ）
               .field__family_kana__required 必須
