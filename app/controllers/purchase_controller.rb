@@ -31,16 +31,8 @@ class PurchaseController < ApplicationController
 private
 
   def product_params
-    params.require(:product).permit(:name, 
-                                    :text, 
-                                    :category_id, 
-                                    :condition, 
-                                    :postage, 
-                                    :days, 
-                                    :area, 
-                                    :price,
-                                    images_attributes:[:name, :_destroy, :id]
-                                    # productテーブルにデータを保存する際に、imageテーブルに一緒に保存する為に”images_attributes:”のように記述してどのカラムに入るか設定する。
+    params.require(:product).permit(
+                                    :buyer_id
                                     ).merge(buyer_id: current_user.id)
   end
 

@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
-  get 'purchase/index'
-  get 'purchase/done'
   devise_for :users
   root 'products#index'
   resources :users, only: [:index, :edit, :update, :show, :destroy]
   resources :categories, only: [:index, :show]
   post  'categories', to: 'products#select_category_index'
   resources :products do
-    collection do
+    member do
       get 'buy', to: 'products#buy'
+      post 'index', to: 'purchase#index'
+      get 'done', to: 'purchase#done'
     end
   end
   resources :card, only: [:new, :destroy] do
@@ -21,7 +21,6 @@ Rails.application.routes.draw do
   resources :purchase, only: [:index] do
     collection do
       get 'index', to: 'purchase#index'
-      # post 'pay', to: 'purchase#pay'
       get 'done', to: 'purchase#done'
     end
     member do
