@@ -1,6 +1,6 @@
 class PurchaseController < ApplicationController
   require 'payjp'
-  
+
   def index
     card = Card.find_by(user_id: current_user.id)
     #Cardテーブルは前回記事で作成、テーブルからpayjpの顧客IDを検索
@@ -28,15 +28,18 @@ class PurchaseController < ApplicationController
   redirect_to action: 'done' #完了画面に移動
   end
   
-private
-
-  def product_params
-    params.require(:product).permit(
-                                    :buyer_id
-                                    ).merge(buyer_id: current_user.id)
-  end
-
   def done
+    @product = Product.find(params[:id])
+    @product.update(buyer_id: current_user.id)
   end
+
+# private
+
+#   def product_params
+#     params.require(:product).permit(
+#                                     :buyer_id
+#                                     ).merge(buyer_id: current_user.id)
+#   end
+# 一つのカラムに対して、情報を編集する場合はupdateを使うことで更新することができる。
 
 end
