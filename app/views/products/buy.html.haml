@@ -41,6 +41,7 @@
       .Confirmation-box__text
         ※配送先と支払い方法の入力を完了してください。
       %input{type: "submit", class:'Confirmation-box__btn', value:'購入する'} 
+        = link_to "購入に進む", product_path , method: :post
 
 
 .Footer

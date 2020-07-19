@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
-  before_action :set_product, except: [:index, :new, :create, :buy]
-
+  before_action :set_product, except: [:index, :new, :create]
+ 
   def index
     @products = Product.includes(:images).limit(4).order('created_at DESC')
     # includesメソッドで記述する際には、親モデルに対して子モデルの命名は複数形で記述する。
@@ -97,6 +97,7 @@ class ProductsController < ApplicationController
 
   def buy
   end
+  
 
 private
   def product_params
