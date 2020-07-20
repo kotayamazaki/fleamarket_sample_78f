@@ -1,9 +1,9 @@
 .main{
-  background: #fff;
-  margin: 20px 0;
+  margin-bottom: 20px;
   &__content{
+    background: #fff;
     width: 700px;
-    margin: 0 auto;
+    margin: 20px auto;
     &__top-content{
       display: flex;
       justify-content: center;
@@ -92,7 +92,7 @@
   background-image: image-url("bg-appBanner-pict.png");
   width: 100vw;
   position: relative;
-  padding: 100px 40px;
+  padding: 100px 0px;
   align-items: center;
   background-size: cover;
   background-position: center;

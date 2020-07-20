@@ -6,13 +6,12 @@
   box-sizing: border-box;
   display: block;
 
-
   .main_visual {
     background-image: image-url("bg-mainVisual-pict_pc.png");
     width: 100vw;
     height: 560px;
     position: relative;
-    padding: 0 60px;
+    // padding: 0 30px;
     align-items: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -101,7 +100,7 @@
     width: 100vw;
     height: 560px;
     position: relative;
-    padding: 0 60px;
+    // padding: 0 60px;
     align-items: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -141,7 +140,8 @@
 
   // ここまで出来た
   .topKeyFeatures {
-    padding: 60px 20px;
+    // padding: 60px 20px;
+    padding: 60px 30px;
 
     .head {
       text-align: center;
@@ -197,7 +197,7 @@
   background-image: image-url("bg-appBanner-pict.png");
   width: 100vw;
   position: relative;
-  padding: 100px 40px;
+  padding: 100px 0px;
   align-items: center;
   background-size: cover;
   background-position: center;
