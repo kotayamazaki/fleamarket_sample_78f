@@ -4,11 +4,20 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :edit, :update, :show, :destroy]
   resources :categories, only: [:index, :show]
   post  'categories', to: 'products#select_category_index'
+
   resources :products do
-    member do
+    member do 
+      # member ブロックは特定のデータを対象とするのでURLに:idがはいる。(例：products/:id/buy)
       get 'buy', to: 'products#buy'
       post 'index', to: 'purchase#index'
       get 'done', to: 'purchase#done'
+      get 'get_category_children', defaults: { format: 'json' }
+      get 'get_category_grandchildren', defaults: { format: 'json' }
+    end
+    collection do 
+      # collection ブロックは全てのデータを対象とするのでURLに:idがはいらない。(例：products/get_category_children)
+      get 'get_category_children', defaults: { format: 'json' }
+      get 'get_category_grandchildren', defaults: { format: 'json' }
     end
   end
   resources :card, only: [:new, :destroy] do
@@ -25,4 +34,5 @@ Rails.application.routes.draw do
       post 'pay', to: 'purchase#pay'
     end
   end
+
 end

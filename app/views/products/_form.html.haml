@@ -42,7 +42,7 @@
         .form-title
           %p.form-title__name 商品の説明
           %P.form-title__reqire 必須
-        = f.text_area :text, placeholder: '商品の説明（必須　1,000文字以内）', class: "input-default text-area"
+        = f.text_area :text, placeholder: '商品の説明（必須 1,000文字以内）', class: "input-default text-area"
         - if @product.errors.include?(:text)
           %p{style: "color: red;"}= @product.errors.full_messages_for(:text).first
         %br/
@@ -54,7 +54,8 @@
             .form-title
               %p.form-title__name カテゴリー
               %P.form-title__reqire 必須   
-            #{f.text_field :category_id, placeholder: '必須', class: "input-default"}
+            = f.collection_select :category_ids, @parents, :id, :name,{prompt: "---"}, class: "select-default", id: "parent-form", name: 'item[category_ids][]'
+            -# #{f.text_field :category_id, placeholder: '必須', class: "input-default"}
             - if @product.errors.include?(:category_id)
               %p{style: "color: red;"}= @product.errors.full_messages_for(:category_id).first
             %br/
