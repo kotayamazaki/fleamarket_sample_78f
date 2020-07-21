@@ -13,7 +13,7 @@ $(function(){
   // 子カテゴリー
   function appendChildrenBox(insertHTML) {
     var childSelectHtml = '';
-    childSelectHtml = `<br><select class= 'select-default input-default' id="child-select" name="product[category_ids][]" >
+    childSelectHtml = `<br><select class= 'select-default input-default' id="child-select" name="product[category_id][]" >
                          <option value>---</option>
                             ${insertHTML}
                         </select></br>`
@@ -23,7 +23,7 @@ $(function(){
   // 孫カテゴリー
   function appendgrandChildrenBox(insertHTML) {
     var grandchildSelectHtml = '';
-    grandchildSelectHtml = `<br><select class= 'select-default input-default' id="grandchild-select" name="product[category_ids][]">
+    grandchildSelectHtml = `<br><select class= 'select-default input-default' id="grandchild-select" name="product[category_id][]">
                               <option value>---</option>
                               ${insertHTML}
                             </select></br>`
