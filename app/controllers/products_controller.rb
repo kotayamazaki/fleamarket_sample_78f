@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, except: [:index, :new, :create, :get_category_children]
+  before_action :set_product, except: [:index, :new, :create, :get_category_children, :get_category_grandchildren]
  
   def index
     @products = Product.includes(:images).limit(4).order('created_at DESC')
@@ -16,6 +16,7 @@ class ProductsController < ApplicationController
   end
 
   def create
+    # binding.pry
     @product = Product.new(product_params)
     if @product.save
       flash[:notice] = "出品が確認できました"
@@ -112,6 +113,7 @@ class ProductsController < ApplicationController
   def get_category_grandchildren
     # 子カテゴリーに紐付く孫カテゴリーを@grandchildrenに代入
     @grandchildren = Category.find(params[:child_id]).children
+    # binding.pry
     # @grandchildren = Category.find("#{params[:child_id]}").children
     respond_to do |format| 
       format.html

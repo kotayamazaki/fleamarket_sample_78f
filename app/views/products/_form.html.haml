@@ -54,7 +54,7 @@
             .form-title
               %p.form-title__name カテゴリー
               %P.form-title__reqire 必須   
-            = f.collection_select :category_ids, @parents, :id, :name,{prompt: "---"}, class: "select-default", id: "parent-form", name: 'item[category_ids][]'
+            = f.collection_select :category_ids, @parents, :id, :name,{prompt: "---"}, class: "select-default input-default", id: "parent-form", name: 'product[category_ids][]'
             -# #{f.text_field :category_id, placeholder: '必須', class: "input-default"}
             - if @product.errors.include?(:category_id)
               %p{style: "color: red;"}= @product.errors.full_messages_for(:category_id).first
