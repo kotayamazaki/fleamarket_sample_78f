@@ -103,7 +103,6 @@ class ProductsController < ApplicationController
     # binding.pry
     # 親カテゴリーに紐付く子カテゴリーを@childrenに代入
     @children = Category.find(params[:parent_id]).children
-    
     respond_to do |format| 
       format.html
       format.json 
@@ -112,11 +111,11 @@ class ProductsController < ApplicationController
 
   def get_category_grandchildren
     # 子カテゴリーに紐付く孫カテゴリーを@grandchildrenに代入
+    @grandchildren = Category.find(params[:child_id]).children
+    # @grandchildren = Category.find("#{params[:child_id]}").children
     respond_to do |format| 
       format.html
-      format.json do
-        @grandchildren = Category.find("#{params[:child_id]}").children
-      end
+      format.json 
     end
   end
   
