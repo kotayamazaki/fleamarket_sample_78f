@@ -16,8 +16,8 @@ class ProductsController < ApplicationController
   end
 
   def create
-    # binding.pry
     @product = Product.new(product_params)
+    # binding.pry
     if @product.save
       flash[:notice] = "出品が確認できました"
       # 通知機能は下のファイルにて実装
