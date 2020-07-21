@@ -23,6 +23,9 @@ Rails.application.routes.draw do
   end
   
   resources :users, only: [:index, :edit, :update, :show, :destroy]
+
+  resources :addresses, except: [:show]
+
   resources :categories, only: [:index, :show]
   post  'categories', to: 'products#select_category_index'
 
