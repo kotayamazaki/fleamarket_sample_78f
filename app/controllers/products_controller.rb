@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, except: [:index, :new, :create]
+  before_action :set_card
  
   def index
     @products = Product.includes(:images).limit(4).order('created_at DESC')
@@ -117,6 +118,10 @@ private
 
   def set_product
     @product = Product.find(params[:id])
+  end
+  
+  def set_card
+    @card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present? 
   end
 
 end
