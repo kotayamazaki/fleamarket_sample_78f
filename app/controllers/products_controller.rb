@@ -96,6 +96,7 @@ class ProductsController < ApplicationController
   end
 
   def buy
+    @card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present? 
   end
   
 

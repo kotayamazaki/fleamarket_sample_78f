@@ -10,10 +10,6 @@
               プロフィール登録
             .my-page__main__side-box__contents__section__list__profile-edit
               プロフィール編集
-            .my-page__main__side-box__contents__section__list__login
-              = link_to "ログイン", new_user_session_path, class: 'post'
-            .my-page__main__side-box__contents__section__list__logout
-              = link_to "ログアウト", destroy_user_session_path, method: :delete
             .my-page__main__side-box__contents__section__list__cledit-register
               = link_to "クレジットカード登録", new_card_path, method: :get
             .my-page__main__side-box__contents__section__list__cledit-edit
