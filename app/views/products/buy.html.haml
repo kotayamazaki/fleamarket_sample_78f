@@ -38,15 +38,11 @@
         -# 配送先編集ページとの連携が必要
 
     .Confirmation-box
-      .Confirmation-box__text
-        - if @card.present?       
-          .container
-            .creditcard-info
-              = link_to "購入に進む", pay_purchase_path(@product.id), class:'Confirmation-box__btn', method: :post       
-        - else       
-          .Confirmation-box__text          
-            ※配送先と支払い方法の入力を完了してください。          
-            %br         
-              = link_to "クレジットカードを登録する", user_path
+      - if @card.present?       
+        = link_to "購入に進む", pay_purchase_path(@product.id), class:'Confirmation-box__btn', method: :post       
+      - else       
+        %p.Confirmation-box__text 
+          ※配送先と支払い方法の入力を完了してください。
+        = link_to "クレジットカードを登録する", user_path, class:'Confirmation-box__second-btn'
 .Footer
   = image_tag "product_image/logo-white.png", class: "sab-logo"

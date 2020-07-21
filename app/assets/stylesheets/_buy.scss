@@ -12,6 +12,7 @@
 }
 .MainContents {
   background-color: #f5f5f5;
+  box-sizing: border-box;
   &__box {
     margin: 0 320px;
     background-color: #ffffff;
@@ -71,13 +72,13 @@
     .Confirmation-box {
       margin: 0 180px;
       padding: 30px 20px;
-      height: 120px;
+      height: 150px;
       text-align: center;
       &__text {
         font-size: 12px;
         color: red;
         text-align: left;
-        margin-bottom: 50px;
+        margin-bottom: 30px;
       }
       &__btn {
         height: 50px;
@@ -89,6 +90,20 @@
         border-style: none;
         background-color: red;
         color: #fff;
+        text-decoration: none;
+      }
+      &__second-btn  {
+        margin-top: 30px;
+        height: 50px;
+        width: 200px;
+        font-weight: bold;
+        border-style: none;
+        padding: 10px 20px;
+        margin-top: 50px;
+        border-radius:5px;
+        background-color: #87cefa;
+        color: #333;
+        text-align: center;
         text-decoration: none;
       }
     }
