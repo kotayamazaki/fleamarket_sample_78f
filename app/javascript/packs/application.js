@@ -11,6 +11,7 @@ require("jquery");
 require("../products");
 require("../categories");
 require("../nav-list");
+require("../category-ajax");
 
 // environment.jsにjqueryを読み込む設定を記載をする（config/webpackディレクトリ以下）
 

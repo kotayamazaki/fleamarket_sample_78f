@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, except: [:index, :new, :create]
+  before_action :set_product, except: [:index, :new, :create, :get_category_children, :get_category_grandchildren]
  
   def index
     @products = Product.includes(:images).limit(4).order('created_at DESC')
@@ -10,11 +10,13 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
     @product.images.new
+    # binding.pry
     # @productの中に、newメソッドを追記したい場合は、改行して上記のように記述する。
     # newメソッドとbuildメソッドの違いは、昔はbuildメソッドを使用しないと上手くnewができなかったが、今ではnewメソッドでできるようになっているのでbuildメソッドは使わない。
   end
 
   def create
+    # binding.pry
     @product = Product.new(product_params)
     if @product.save
       flash[:notice] = "出品が確認できました"
@@ -97,6 +99,27 @@ class ProductsController < ApplicationController
 
   def buy
     @card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present? 
+  end
+
+  def get_category_children
+    # binding.pry
+    # 親カテゴリーに紐付く子カテゴリーを@childrenに代入
+    @children = Category.find(params[:parent_id]).children
+    respond_to do |format| 
+      format.html
+      format.json 
+    end
+  end
+
+  def get_category_grandchildren
+    # 子カテゴリーに紐付く孫カテゴリーを@grandchildrenに代入
+    @grandchildren = Category.find(params[:child_id]).children
+    # binding.pry
+    # @grandchildren = Category.find("#{params[:child_id]}").children
+    respond_to do |format| 
+      format.html
+      format.json 
+    end
   end
   
 
