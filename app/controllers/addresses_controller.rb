@@ -30,6 +30,18 @@ class AddressesController < ApplicationController
   end
 
 private
+
+  def product_params
+    params.require(:address).permit(:postal_code, 
+                                    :prefecture, 
+                                    :city, 
+                                    :house_number,
+                                    :room_number,
+                                    :telephone_number,
+                                    ).merge(user_id: current_user.id)
+                                    # mergeでcurrent_user.idの方が出品をした際に、addressテーブルにあるuser_id:カラムと出品物の外部キーでの連携ができる。
+  end
+
   def set_address
     @address = Address.find(params[:id])
   end

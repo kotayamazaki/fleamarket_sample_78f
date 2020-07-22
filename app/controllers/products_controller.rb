@@ -49,6 +49,14 @@ class ProductsController < ApplicationController
       flash.now[:alert] = "削除できませんでした"
     end
   end
+
+  def show
+  end
+
+  def buy
+    @card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present? 
+  end
+
   
   def select_category_index
     # カテゴリ名を取得するために@categoryにレコードをとってくる
@@ -94,13 +102,8 @@ class ProductsController < ApplicationController
     end
   end
 
-  def show
-  end
 
-  def buy
-    @card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present? 
-  end
-
+  
   def get_category_children
     # binding.pry
     # 親カテゴリーに紐付く子カテゴリーを@childrenに代入
