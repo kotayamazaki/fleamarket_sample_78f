@@ -1,0 +1,71 @@
+%section.Exhibition
+  =link_to root_path do
+    = image_tag "logo.png", size: "185x49", alt: "フリマのアイコン",class: "Exhibition__logo"
+  .Exhibition__form
+    = form_with(model: @address, local: true) do |f|
+
+      - if @address.errors.any?
+        #error_explanation
+          %h2
+            = pluralize(@address.errors.count, "error")
+            prohibited this product from being saved:
+          %ul
+            - @address.errors.full_messages.each do |message|
+              %li= message
+
+      .postal-field.field
+        .form-title
+          %p.form-title__name 郵便番号
+          %P.form-title__reqire 必須
+        = f.number_field :postal_code, placeholder: '〒000-0000', class: "input-default"
+        - if @address.errors.include?(:postal_code)
+          %p{style: "color: red;"}= @address.errors.full_messages_for(:postal_code).first
+        %br/
+
+      .prefecture-field.field
+        .form-title
+          %p.form-title__name 都道府県
+          %P.form-title__reqire 必須
+        = f.text_field :prefecture, placeholder: '入力してください', class: "input-default"
+        - if @address.errors.include?(:prefecture )
+          %p{style: "color: red;"}= @address.errors.full_messages_for(:prefecture ).first
+        %br/
+
+      .city.field
+        .form-title
+          %p.form-title__name 市区町村
+          %P.form-title__reqire 必須   
+        = f.text_field :city, placeholder: '入力してください', class: "input-default"
+        - if @address.errors.include?(:city)
+          %p{style: "color: red;"}= @address.errors.full_messages_for(:city).first
+        %br/
+
+      .house_number.field
+        .form-title
+          %p.form-title__name 番地
+          %P.form-title__reqire 必須  
+        = f.text_field :house_number, placeholder: '〇丁目 〇番地 〇号', class: "input-default"
+        - if @address.errors.include?(:house_number)
+          %p{style: "color: red;"}= @address.errors.full_messages_for(:house_number).first
+        %br/
+       
+      .room_number.field
+        .form-title
+          %p.form-title__name 建物名
+          %P.form-title__reqire 必須   
+        = f.text_field :room_number, placeholder: '〇〇アパート 〇〇号室', class: "input-default"
+        - if @address.errors.include?(:room_number)
+          %p{style: "color: red;"}= @address.errors.full_messages_for(:room_number).first
+        %br/
+
+      .telephone_number__area.field
+        .form-title
+          %p.form-title__name 電話番号
+          %P.form-title__reqire 必須   
+        = f.telephone_field :telephone_number, placeholder: '000-0000-0000', class: "input-default"
+        - if @address.errors.include?(:telephone_number)
+          %p{style: "color: red;"}= @address.errors.full_messages_for(:telephone_number).first
+        %br/
+        
+      .product-submit.field
+        = f.submit "住所登録する", class: "input-default"
