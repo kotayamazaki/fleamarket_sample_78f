@@ -3,16 +3,17 @@ class AddressesController < ApplicationController
   def index #詳細のようなページ作成
   end
 
-  def new #アドレスを保存するためのフォーム作成
+  def new
     @address = Address.new
   end
 
   def create
-    @address = Address.new
+    @address = Address.new(address_params)
     if @address.save
       flash[:notice] = "登録が確認できました"
       # 通知機能は下のファイルにて実装
       # app/views/layouts/application.html.haml
+      # app/config/locales/ja.yml
       redirect_to root_path
     else    
       flash.now[:alert] = "登録できません"
@@ -20,10 +21,15 @@ class AddressesController < ApplicationController
     end
   end
 
-  def edit #アドレスを保存するためのフォーム作成
+  def edit
   end
 
   def update
+    if @address.update(address_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -31,7 +37,7 @@ class AddressesController < ApplicationController
 
 private
 
-  def product_params
+  def address_params
     params.require(:address).permit(:postal_code, 
                                     :prefecture, 
                                     :city, 
@@ -43,7 +49,7 @@ private
   end
 
   def set_address
-    @address = Address.find(params[:id])
+    @address = Address.find_by(user_id: current_user.id)
   end
 
 end
