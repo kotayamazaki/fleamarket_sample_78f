@@ -7,7 +7,7 @@ class CreateAddresses < ActiveRecord::Migration[6.0]
       t.string      :city,            null: false
       t.string      :house_number,    null: false
       t.string      :room_number
-      t.integer     :telephone_number
+      t.string      :telephone_number
       t.timestamps
       # 送付先の氏名を追記する必要があるか後に確認する
     end

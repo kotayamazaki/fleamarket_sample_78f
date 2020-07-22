@@ -62,7 +62,7 @@
         .form-title
           %p.form-title__name 電話番号
           %P.form-title__reqire 必須   
-        = f.number_field :telephone_number, placeholder: '000-0000-0000', class: "input-default"
+        = f.telephone_field :telephone_number, placeholder: '000-0000-0000', class: "input-default"
         - if @address.errors.include?(:telephone_number)
           %p{style: "color: red;"}= @address.errors.full_messages_for(:telephone_number).first
         %br/
