@@ -7,9 +7,9 @@
           %h2.my-page__main__side-box__contents__section__title マイページメニュー 
           .my-page__main__side-box__contents__section__list
             .my-page__main__side-box__contents__section__list__profile-register
-              プロフィール登録
+              = link_to "住所登録", new_address_path, method: :get
             .my-page__main__side-box__contents__section__list__profile-edit
-              プロフィール編集
+              = link_to "住所編集", edit_address_path, method: :get
             .my-page__main__side-box__contents__section__list__cledit-register
               = link_to "クレジットカード登録", new_card_path, method: :get
             .my-page__main__side-box__contents__section__list__cledit-edit

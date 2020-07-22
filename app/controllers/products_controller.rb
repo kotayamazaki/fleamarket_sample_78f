@@ -49,6 +49,19 @@ class ProductsController < ApplicationController
       flash.now[:alert] = "削除できませんでした"
     end
   end
+
+  def show
+    @products = Product.includes(:images).limit(1).order('created_at DESC')
+    @category_id = @product.category_id
+    @category_parent = Category.find(@category_id).parent.parent
+    @category_child = Category.find(@category_id).parent
+    @category_grandchild = Category.find(@category_id)
+  end
+
+  def buy
+    @card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present? 
+  end
+
   
   def select_category_index
     # カテゴリ名を取得するために@categoryにレコードをとってくる
@@ -93,6 +106,7 @@ class ProductsController < ApplicationController
       end
     end
   end
+
 
   def show
     @products = Product.includes(:images).limit(1).order('created_at DESC')
