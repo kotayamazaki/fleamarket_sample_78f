@@ -106,7 +106,10 @@
               %p{style: "color: red;"}= @product.errors.full_messages_for(:price).first
             %br/
       .product-submit.field
-        = f.submit "出品する", class: "Exhibitionーbutton submit"
+        - if user_signed_in? && current_user.id        
+          = f.submit "出品する", class: "Exhibitionーbutton"       
+        - else       
+          = link_to "ログインしてください", root_path, class:"login-btn"
 
     -# fields_forメソッドを利用する際に、親モデルの中に書く必要があるメソッドとして、”accepts_nested_attributes_for”がある。
     -# form_forメソッドを使用して、ネストの関係性でfields_forを利用してあげる。そうする事で、image画像を追加するためのfile_fieldメソッドを使用する事ができる。
