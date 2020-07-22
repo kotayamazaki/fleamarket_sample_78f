@@ -31,9 +31,9 @@
       %tr
         %th.category カテゴリー  
         %td
-          = link_to "#{@category_parent.name}","#"
-          %br= link_to "#{@category_child.name}","#"
-          = link_to "#{@category_grandchild.name}","#"
+          = link_to "#{@category_parent&.name}","#", class:'category-link'
+          = link_to "#{@category_child&.name}","#", class:'category-link' 
+          = link_to "#{@category_grandchild.name}","#", class:'category-link' 
       %tr
         %th.category 商品の状態 
         %td.subcontent 

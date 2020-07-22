@@ -107,7 +107,20 @@ class ProductsController < ApplicationController
     end
   end
 
-  
+
+  def show
+    @products = Product.includes(:images).limit(1).order('created_at DESC')
+    @category_id = @product.category_id
+    @category_parent = Category.find(@category_id).parent&.parent
+    @category_child = Category.find(@category_id)&.parent
+    # &. は「ぼっち演算子」といい値がなくてもnullとしてOKしてくれる
+    @category_grandchild = Category.find(@category_id)
+  end
+
+  def buy
+    @card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present? 
+  end
+
   def get_category_children
     # binding.pry
     # 親カテゴリーに紐付く子カテゴリーを@childrenに代入
