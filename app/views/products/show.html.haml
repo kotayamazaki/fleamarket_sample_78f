@@ -53,10 +53,10 @@
     - if user_signed_in? && current_user.id == @product.seller_id
       = link_to '編集', edit_product_path
       = link_to '削除', product_path(@product.id), method: :delete
-    - elsif user_signed_in? && current_user.id
-      = link_to '購入', buy_product_path, class: 'btn-btn-default'
     - elsif @product.buyer_id
       購入済み
+    - elsif user_signed_in? && current_user.id
+      = link_to '購入', buy_product_path, class: 'btn-btn-default'
     - else
       = link_to "ログインしてください", root_path, class:"login-btn"
       -# %input{type: "submit", class:'Confirmation-box__btn', value:'購入する'} 
