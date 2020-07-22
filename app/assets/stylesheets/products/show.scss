@@ -25,20 +25,21 @@
         }
 
         &__body {
-          margin: 16px 0 0;
+          margin: 16px 0;
           text-align: center;
+        }
 
-          &--sub {
-            display: flex;
-            justify-content: center;
-            margin: 10px 0;
-
+          &__image-body {
+            overflow-x: auto;
+            white-space: nowrap;
+            .sub-image-body {
+              object-fit: cover;
+            }
           }
 
           .image {
             padding: 5px;
           }
-        }
 
         &__price {
           display: flex;
@@ -107,6 +108,18 @@
     color: #fff;
     text-align: center;
     font-weight: 600px;
+  }
+  .login-btn {
+    width: 80%;
+    line-height: 48px;
+    font-size: 18px;
+    border-radius: 4px;
+    background-color: #87cefa;
+    border: none;
+    color: #696969;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
   }
 }
 

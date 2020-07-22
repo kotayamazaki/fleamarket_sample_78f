@@ -51,6 +51,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @images = @product.images.limit(10).order('created_at DESC')
     @products = Product.includes(:images).limit(1).order('created_at DESC')
     @category_id = @product.category_id
     @category_parent = Category.find(@category_id).parent.parent

@@ -7,12 +7,11 @@
           %h2.product-name 
             = @product.name
         .main__content__top-content__itembox__body
-          -# = image_tag "pict-reason-01.jpg", size:"400x400"
           = image_tag @product.images[0].name.url, size:"320x250", class:"head-image"
-
-          -# .main__content__top-content__itembox__body--sub
-          -#   = image_tag "pict-reason-01.jpg", size:"100x100", class:"image"  
-          -#   = image_tag "pict-reason-01.jpg", size:"100x100", class:"image"
+          .main__content__top-content__itembox__image-body
+            - @product.images.each do |image|
+              = image_tag image.name.url, class:"sub-image-body"
+   
            
         .main__content__top-content__itembox__price 
           %h3.product-price 
@@ -54,10 +53,12 @@
     - if user_signed_in? && current_user.id == @product.seller_id
       = link_to '編集', edit_product_path
       = link_to '削除', product_path(@product.id), method: :delete
+    - elsif user_signed_in? && current_user.id
+      = link_to '購入', buy_product_path, class: 'btn-btn-default'
     - elsif @product.buyer_id
       購入済み
     - else
-      = link_to '購入', buy_product_path, class: 'btn-btn-default'
+      = link_to "ログインしてください", root_path, class:"login-btn"
       -# %input{type: "submit", class:'Confirmation-box__btn', value:'購入する'} 
 
 .appBanner

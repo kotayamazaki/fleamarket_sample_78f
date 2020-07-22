@@ -41,16 +41,32 @@
   margin-top: 5px;
 }
 
-.Exhibitionーbutton {
-  width: 100%;
-  line-height: 48px;
-  font-size: 18px;
-  border-radius: 4px;
-  background: #ea352d;
-  border: 1px solid #ea352d;
-  color: #fff;
-  cursor: pointer;
-  // text-align: center;
+.product-submit.field{
+  display: flex;
+  justify-content: center;
+  .Exhibitionーbutton {
+    width: 100%;
+    line-height: 48px;
+    font-size: 18px;
+    border-radius: 4px;
+    background: #ea352d;
+    border: 1px solid #ea352d;
+    color: #fff;
+    cursor: pointer;
+    // text-align: center;
+  }
+  .login-btn {
+    width: 100%;
+    line-height: 48px;
+    font-size: 18px;
+    border-radius: 4px;
+    background-color: #87cefa;
+    border: none;
+    color: #696969;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+  }
 }
 
 .text-area {
@@ -66,7 +82,7 @@
   display: flex;
   height: 30px;
 
-  &__naeme {
+  &__name {
     font-size: 15px;
   }
 
@@ -81,4 +97,5 @@
     font-weight: bold;
     height: 25px;
   }
+  
 }
