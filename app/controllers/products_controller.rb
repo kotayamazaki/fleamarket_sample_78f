@@ -16,8 +16,8 @@ class ProductsController < ApplicationController
   end
 
   def create
-    # binding.pry
     @product = Product.new(product_params)
+    # binding.pry
     if @product.save
       flash[:notice] = "出品が確認できました"
       # 通知機能は下のファイルにて実装
@@ -51,6 +51,11 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @products = Product.includes(:images).limit(1).order('created_at DESC')
+    @category_id = @product.category_id
+    @category_parent = Category.find(@category_id).parent.parent
+    @category_child = Category.find(@category_id).parent
+    @category_grandchild = Category.find(@category_id)
   end
 
   def buy
@@ -101,7 +106,6 @@ class ProductsController < ApplicationController
       end
     end
   end
-
 
   
   def get_category_children

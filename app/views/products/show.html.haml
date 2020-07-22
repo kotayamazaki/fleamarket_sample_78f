@@ -4,32 +4,36 @@
     .main__content__top-content
       .main__content__top-content__itembox
         .main__content__top-content__itembox__name
-          %h2.product-name 商品名
+          %h2.product-name 
+            = @product.name
         .main__content__top-content__itembox__body
-          = image_tag "pict-reason-01.jpg", size:"400x400"
-          .main__content__top-content__itembox__body--sub
-            = image_tag "pict-reason-01.jpg", size:"100x100", class:"image"  
-            = image_tag "pict-reason-01.jpg", size:"100x100", class:"image"
+          -# = image_tag "pict-reason-01.jpg", size:"400x400"
+          = image_tag @product.images[0].name.url, size:"320x250", class:"head-image"
+
+          -# .main__content__top-content__itembox__body--sub
+          -#   = image_tag "pict-reason-01.jpg", size:"100x100", class:"image"  
+          -#   = image_tag "pict-reason-01.jpg", size:"100x100", class:"image"
            
-        .main__content__top-content__itembox__price
-          %h3.product-price ¥1000
+        .main__content__top-content__itembox__price 
+          %h3.product-price 
+            = "￥#{@product.price}"
           .main__content__top-content__itembox__detail
-            (税込)送料込み
+            (税込)
         .main__content__top-content__itembox__Explanation
-          出品用テキスト ここに説明が入ります。出品用テキスト ここに説明が入ります。出品用テキスト ここに説明が入ります。
+          = @product.text
   .table
     %table.table__content{ width: "600"}  
       -# subcontentはモデルから引っ張ってくる
       %tr
         %th.category 出品者  
         %td.subcontent 
-          = @product.seller_id
+          = @product.seller.nickname
       %tr
         %th.category カテゴリー  
-        %td.subcontent 
-          = @product.category_id
-          %br 
-          = @product.category_id
+        %td
+          = link_to "#{@category_parent.name}","#"
+          %br= link_to "#{@category_child.name}","#"
+          = link_to "#{@category_grandchild.name}","#"
       %tr
         %th.category 商品の状態 
         %td.subcontent 

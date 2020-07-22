@@ -54,7 +54,7 @@
             .form-title
               %p.form-title__name カテゴリー
               %P.form-title__reqire 必須   
-            = f.collection_select :category_ids, @parents, :id, :name,{prompt: "---"}, class: "select-default input-default", id: "parent-form", name: 'product[category_ids][]'
+            = f.collection_select :category_id, @parents, :id, :name,{prompt: "---"}, class: "select-default input-default", id: "parent-form", name: 'product[category_id]'
             -# #{f.text_field :category_id, placeholder: '必須', class: "input-default"}
             - if @product.errors.include?(:category_id)
               %p{style: "color: red;"}= @product.errors.full_messages_for(:category_id).first
@@ -63,7 +63,7 @@
             .form-title
               %p.form-title__name 商品の状態
               %P.form-title__reqire 必須   
-            = f.select :condition, {'新品未使用': 1, '未使用に近い': 2, '目立った傷や汚れなし': 3, 'やや傷や汚れあり': 4, '傷や汚れあり': 5, '全体的に状態が悪い': 6}, { include_blank: '選択してください'}, {class: "input-default" , required: true }
+            = f.select :condition, {'新品未使用': '新品未使用', '未使用に近い': '未使用に近い', '目立った傷や汚れなし': '目立った傷や汚れなし', 'やや傷や汚れあり': 'やや傷や汚れあり', '傷や汚れあり': '傷や汚れあり', '全体的に状態が悪い': '全体的に状態が悪い'}, { include_blank: '選択してください'}, {class: "input-default" , required: true }
             - if @product.errors.include?(:condition)
               %p{style: "color: red;"}= @product.errors.full_messages_for(:condition).first
             %br/
@@ -90,7 +90,7 @@
             .form-title
               %p.form-title__name 発送までの日数
               %P.form-title__reqire 必須   
-            = f.select :days, {'支払い後，１〜２日で発送': 1, '支払い後，2〜3日で発送': 2, '支払い後，4〜7日で発送': 3}, { include_blank: '選択してください'}, {class: "input-default",required: true }
+            = f.select :days, {'支払い後，１〜２日で発送': '支払い後，１〜２日で発送', '支払い後，2〜3日で発送': '支払い後，2〜3日で発送', '支払い後，4〜7日で発送': '支払い後，4〜7日で発送'}, { include_blank: '選択してください'}, {class: "input-default",required: true }
             - if @product.errors.include?(:days)
               %p{style: "color: red;"}= @product.errors.full_messages_for(:days).first
             %br/

@@ -1,48 +1,58 @@
-.main{
+.main {
   margin-bottom: 20px;
-  &__content{
+
+  &__content {
     background: #fff;
     width: 700px;
     margin: 20px auto;
-    &__top-content{
+
+    &__top-content {
       display: flex;
       justify-content: center;
       align-items: center;
-      &__itembox{
+
+      &__itembox {
         background-color: #fff;
         padding: 24px 40px 40px;
         width: 600px;
-        &__name{
-          .product-name{
+
+        &__name {
+          .product-name {
             text-align: center;
             font-size: 24px;
             font-weight: bold;
           }
         }
-        &__body{
+
+        &__body {
           margin: 16px 0 0;
           text-align: center;
-          &--sub{
+
+          &--sub {
             display: flex;
             justify-content: center;
-            margin: 10px 0 ;
+            margin: 10px 0;
 
           }
-          .image{
+
+          .image {
             padding: 5px;
           }
         }
-        &__price{
+
+        &__price {
           display: flex;
           margin: 24px 0 24px;
           text-align: center;
           flex-direction: column;
-          .product-price{
+
+          .product-price {
             font-size: 46px;
             font-weight: bold;
           }
         }
-        &__Explanation{
+
+        &__Explanation {
           line-height: 1.5;
           font-size: 18px;
           margin-bottom: 30px;
@@ -52,18 +62,25 @@
     }
   }
 }
-.table{
+
+.table {
   font-size: 14px;
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
-  .subcontent{
+
+  &__content {
+    border: solid 1px #dcdcdc;
+  }
+
+  .subcontent {
     border: solid 1px #dcdcdc;
     box-sizing: border-box;
     padding: 10px;
     display: table-cell;
   }
-  .category{
+
+  .category {
     border: solid 1px #dcdcdc;
     margin-bottom: 20px;
     height: 40px;
@@ -73,11 +90,12 @@
   }
 }
 
-.user-in{
+.user-in {
   display: flex;
   justify-content: center;
   margin-bottom: 15px;
-  .btn-btn-default{
+
+  .btn-btn-default {
     width: 600px;
     text-decoration: none;
     display: block;
@@ -126,5 +144,3 @@
     }
   }
 }
-
-
