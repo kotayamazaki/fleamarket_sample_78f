@@ -5,10 +5,12 @@
         =link_to root_path do
           = image_tag "logo.png", size: "185x49", alt: "フリマのアイコン", class: 'furima-logo'
       .header__contents__top__form
-        = form_with(local: true, method: :get, class: "search-form") do |f|
+        = form_with(url: search_products_path, local: true, method: :get, class: "search-form") do |f|
           = f.text_field :keyword, placeholder: "何かお探しですか？", class: "search-input"
-          %button{type: "submit", class:'btn'}
-            %i.fas.fa-search
+          = submit_tag 'search', :name => nil
+        
+          -# %button{type: "submit", class:'btn'}
+          -#   %i.fas.fa-search
     .header__contents__below
       .header__contents__below__search
         .header__contents__below__search__category
