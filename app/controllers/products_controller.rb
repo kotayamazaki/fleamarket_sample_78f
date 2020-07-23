@@ -1,10 +1,13 @@
 class ProductsController < ApplicationController
-  before_action :set_product, except: [:index, :new, :create, :get_category_children, :get_category_grandchildren]
+  before_action :set_product, except: [:index, :new, :create, :search, :get_category_children, :get_category_grandchildren]
  
   def index
     @products = Product.includes(:images).limit(4).order('created_at DESC')
     # includesメソッドで記述する際には、親モデルに対して子モデルの命名は複数形で記述する。
     # orderメソッドはDESCで記述すると指定したカラムの新しい順で記述する事ができる。
+
+    @product = Product.search(params[:search]).limit(132)
+    @search = params[:search]
   end
 
   def new
@@ -51,12 +54,19 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @images = @product.images.limit(10).order('created_at DESC')
     @products = Product.includes(:images).limit(1).order('created_at DESC')
     @category_id = @product.category_id
-    @category_parent = Category.find(@category_id).parent.parent
-    @category_child = Category.find(@category_id).parent
+    @category_parent = Category.find(@category_id).parent&.parent
+    @category_child = Category.find(@category_id)&.parent
+    # &. は「ぼっち演算子」といい値がなくてもnullとしてOKしてくれる
     @category_grandchild = Category.find(@category_id)
+  
+    # @product = Product.search(params[:search]).limit(132)
+    # @search = params[:search]
+  end
+
+  def search
+    @products = Product.search(params[:keyword])
   end
 
   def buy
@@ -109,19 +119,6 @@ class ProductsController < ApplicationController
   end
 
 
-  def show
-    @products = Product.includes(:images).limit(1).order('created_at DESC')
-    @category_id = @product.category_id
-    @category_parent = Category.find(@category_id).parent&.parent
-    @category_child = Category.find(@category_id)&.parent
-    # &. は「ぼっち演算子」といい値がなくてもnullとしてOKしてくれる
-    @category_grandchild = Category.find(@category_id)
-  end
-
-  def buy
-    @card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present? 
-  end
-
   def get_category_children
     # binding.pry
     # 親カテゴリーに紐付く子カテゴリーを@childrenに代入
@@ -143,6 +140,9 @@ class ProductsController < ApplicationController
     end
   end
   
+
+
+
 
 private
   def product_params

@@ -24,4 +24,12 @@ class Product < ApplicationRecord
       greater_than_or_equal_to: 100,
       less_than: 100000
     }
+
+  def self.search(search)
+    if search
+      Product.where('name LIKE(?)', "%#{search}%")
+    else
+      Product.all
+    end
+  end
 end
