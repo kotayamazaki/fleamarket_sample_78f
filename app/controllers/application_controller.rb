@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   before_action :set_category
   
   def set_category
-    @parents = Category.all.order("id ASC").limit(19)
+    @parents = Category.all.order("id ASC").limit(13)
   end
 
   private
