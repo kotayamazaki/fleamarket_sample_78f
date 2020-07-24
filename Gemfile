@@ -75,3 +75,4 @@ gem 'mini_magick'
 gem 'jquery-rails'
 gem 'ancestry' #カテゴリ機能
 gem 'fog-aws' #外部のストレージを選択しアップロードする(S3)
+gem 'ransack'

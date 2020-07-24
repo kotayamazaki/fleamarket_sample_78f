@@ -1,22 +1,44 @@
 = render partial: 'layouts/header'
-.product-lists
-  - @products.each do |product|
-    .product-list
-      = link_to "/products/#{product.id}", class: "url-stile",method: :get do
+.Warppper
+  .search-form
+    = search_form_for(@q, url:search_products_path) do |f|
+      = f.label :name, '商品名'
+      = f.search_field :name
+      = f.label :name, '説明'
+      = f.search_field :text
+      = f.label :name, 'カテゴリー'
+      = f.search_field :category_id
+      = f.label :name, '商品の状態'
+      = f.search_field :condition
+      = f.label :name, '運送'
+      = f.search_field :postage
+      = f.label :name, '日数'
+      = f.search_field :days
+      = f.label :name, '場所'
+      = f.search_field :area
+      = f.label :name, '値段'
+      = f.search_field :price
+      = f.submit
 
-        .product-list__img
-          = image_tag product.images[0].name.url, size:"220x150", class:"head-image"
 
-        .product-list__body
-          .product-list__name
-            = product.name
-          .details
-            .details__price
-              = product.price 
-              %span 円
-            %p.tax-price (税込)
-        -if product.buyer_id.present? 
-          .items-box_photo__sold
-            .items-box_photo__sold__inner
-              SOLD
-検索結果
+  .product-lists
+    - @products.each do |product|
+      .product-list
+        = link_to "/products/#{product.id}", class: "url-stile",method: :get do
+
+          .product-list__img
+            = image_tag product.images[0].name.url, size:"220x150", class:"head-image"
+
+          .product-list__body
+            .product-list__name
+              = product.name
+            .details
+              .details__price
+                = product.price 
+                %span 円
+              %p.tax-price (税込)
+          -if product.buyer_id.present? 
+            .items-box_photo__sold
+              .items-box_photo__sold__inner
+                SOLD
+  検索結果

@@ -5,9 +5,6 @@ class ProductsController < ApplicationController
     @products = Product.includes(:images).limit(4).order('created_at DESC')
     # includesメソッドで記述する際には、親モデルに対して子モデルの命名は複数形で記述する。
     # orderメソッドはDESCで記述すると指定したカラムの新しい順で記述する事ができる。
-
-    @product = Product.search(params[:search]).limit(132)
-    @search = params[:search]
   end
 
   def new
@@ -67,6 +64,12 @@ class ProductsController < ApplicationController
 
   def search
     @products = Product.search(params[:keyword])
+    @q = Product.ransack(params[:q])
+    # @qq = @q.Product.search(search_params)
+    @product = @q.result(distinct: true)
+    
+
+    
   end
 
   def buy
@@ -162,6 +165,11 @@ private
 
   def set_product
     @product = Product.find(params[:id])
+  end
+
+  def search_params
+    # params.require(:q).permit!
+    params.require(:q).permit(:name, :text, :category_id, :condition, :postage, :days, :area, :price)
   end
 
 end
