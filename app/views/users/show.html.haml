@@ -1,4 +1,10 @@
 = render partial: 'layouts/header'
+
+-# config/breadcrumbs.rbに定義したmypageを呼び出し
+- breadcrumb :mypage
+-# 下記を記述した箇所にパンくずリストが表示される。
+= breadcrumbs separator: " &rsaquo; "
+
 .my-page
   .my-page__main
     .my-page__main__side-box

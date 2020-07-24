@@ -1,3 +1,10 @@
+-# config/breadcrumbs.rbに定義したmypageを呼び出し
+- breadcrumb :new_card
+-# 下記を記述した箇所にパンくずリストが表示される。
+= breadcrumbs separator: " &rsaquo; "
+%br
+%br
+
 = form_tag(pay_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
   %label カード番号
   = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
@@ -37,5 +44,6 @@
   = text_field_tag "cvc", "", class: "cvc", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
   #card_token
   = submit_tag "追加する", id: "token_submit"
-
+%br
+%br
 = link_to "トップページに戻る", root_path
